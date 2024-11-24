@@ -1,4 +1,77 @@
-# Key Concepts on Change Velocity and Service's SLO
+# SRE Overview
+### **What is Site Reliability Engineering (SRE)?**
+
+Site Reliability Engineering (SRE) is an engineering discipline that applies software development principles to operations tasks. It aims to build scalable, reliable systems by automating manual operations, managing risks, and optimizing the balance between innovation and system stability.
+
+Key areas of SRE include:  
+- **Reliability:** Ensuring high availability and performance.  
+- **Monitoring:** Implementing tools and metrics to observe system health.  
+- **Incident Response:** Managing and resolving outages or degradations efficiently.  
+- **Automation:** Reducing toil through scripts, tools, and infrastructure-as-code.  
+- **Capacity Planning:** Ensuring systems can handle traffic and growth without failure.
+
+### **Who Does SRE?**
+
+SRE roles are typically filled by engineers who have a mix of skills in software development, systems administration, and operations. This includes:  
+- **Dedicated SRE Teams:** Teams entirely focused on SRE practices, usually in larger organizations.  
+- **Hybrid Roles:** Developers or operators with some SRE responsibilities in smaller or DevOps-oriented environments.  
+- **Cross-functional Product Teams:** In modern organizations, SRE principles are often shared across product development teams.
+
+
+### **Expectations in Modern Software Engineering Roles**
+
+Today, many software engineers are expected to contribute to reliability alongside their primary development tasks. This integration of responsibilities is sometimes referred to as **"You build it, you run it."**
+
+**Typical expectations include:**  
+1. **Participation in On-Call Rotations:** Engineers may join on-call schedules to support the systems they build.  
+2. **Incident Management:** Responding to and learning from outages to improve system reliability.  
+3. **Monitoring & Alerting:** Implementing metrics and dashboards for observability.  
+4. **Infrastructure Knowledge:** Using tools like Kubernetes, Terraform, or CI/CD pipelines to deploy and manage applications.  
+5. **Collaboration with SRE Teams:** Partnering with dedicated SREs to build robust, scalable systems.  
+
+### **Balancing Product Development with SRE Responsibilities**  
+
+- **Small Teams:** Engineers often have to balance feature development with operational tasks.  
+- **Large Teams:** Responsibilities are more delineated, but developers may still focus on building resilient code and designing for operability.  
+- **Cultural Shift:** Modern engineering culture expects developers to consider operational implications (e.g., SLAs, SLIs, SLOs) from the start.
+
+By blending product development and SRE principles, organizations aim to achieve **faster development cycles** without compromising **system reliability**.
+
+### **Comparison of Approaches to Manage Operational Concerns in Software Engineering**
+
+Managing operational concerns in software engineering varies significantly depending on the team's size, maturity, and culture. Below is a comparison of the most common approaches:
+
+| **Approach**                 | **Description**                                                                                 | **Advantages**                                                   | **Disadvantages**                                              | **Best For**                                      |
+|------------------------------|-------------------------------------------------------------------------------------------------|------------------------------------------------------------------|---------------------------------------------------------------|---------------------------------------------------|
+| **Traditional Operations Team** | A separate operations team handles all deployment, monitoring, and incident management tasks. | - Clear division of responsibilities<br>- Operations expertise   | - Siloed communication<br>- Slower deployments<br>- Less developer accountability | Large organizations with legacy systems          |
+| **DevOps**                   | Developers and operators collaborate closely, sharing responsibilities for deployment and reliability. | - Improved collaboration<br>- Faster feedback loops<br>- Continuous delivery focus | - Requires cultural change<br>- Can lack clarity in responsibilities | Organizations transitioning to modern workflows  |
+| **SRE (Dedicated Team)**     | A specialized team applies SRE principles to manage system reliability and automate operations. | - Strong reliability focus<br>- Expertise in automation<br>- Reduces toil | - Can create a new silo<br>- Requires investment in SRE roles and tools | Companies with complex, high-scale systems       |
+| **Integrated SRE/Dev Teams** | Product teams adopt SRE practices and handle their system's operational concerns.             | - Increased accountability<br>- Faster issue resolution<br>- Seamless feedback | - Higher cognitive load on developers<br>- Requires training and mindset shift | Small-to-medium teams with modern infrastructure |
+| **"You Build It, You Run It"** | Developers own end-to-end responsibility for their services, including operations and on-call duties. | - Maximum ownership<br>- Clear accountability<br>- Faster iteration | - Burnout risk<br>- Requires robust tooling and culture<br>- Not scalable for complex systems | Startups or small teams                          |
+
+---
+
+#### **Key Factors to Consider**
+
+1. **Team Size and Structure:** Smaller teams benefit from integrated approaches (e.g., DevOps, "You Build It, You Run It"), while larger organizations may require dedicated operations or SRE teams.  
+2. **System Complexity:** Highly complex systems often require dedicated SRE teams to handle specialized concerns.  
+3. **Cultural Readiness:** Success in DevOps or SRE models depends on cultural alignment and willingness to adapt.  
+4. **Operational Maturity:** Teams with strong processes and automation can handle more integrated approaches.  
+5. **Business Needs:** Fast-paced environments prioritize speed, while mission-critical systems prioritize reliability.
+
+#### **Recommendations by Context**
+
+| **Context**                       | **Recommended Approach**                                |
+|-----------------------------------|--------------------------------------------------------|
+| Startup with small, nimble teams  | "You Build It, You Run It" or DevOps                   |
+| Mid-sized company scaling up      | DevOps with elements of SRE                            |
+| Enterprise with legacy systems    | Traditional Ops transitioning to DevOps or SRE         |
+| Large-scale, high-availability system | Dedicated SRE team with close collaboration to Dev teams |
+
+Selecting the right model involves balancing operational needs with team capabilities, ensuring long-term sustainability and business alignment.
+
+# Key Concepts in SRE
+## Product: Change Velocity (features) and Service's SLO (stability)
 
 1. **Structural Conflict**:
    - Product development teams and SRE teams often have conflicting goals: development wants rapid innovation, while SRE seeks system stability.
@@ -31,7 +104,7 @@
 >**Product development teams** are cross-functional groups within an organization responsible for designing, building, testing, and delivering a product. These teams typically consist of members with diverse skills, such as engineers, designers, product managers, and marketers, working collaboratively to create and improve a product throughout its lifecycle. Their goal is to meet customer needs, ensure product quality, and align with business objectives.
 
 >**SRE (Site Reliability Engineering) teams** are responsible for ensuring the reliability, scalability, and performance of software systems in production environments. They bridge the gap between development and operations by applying engineering practices to infrastructure and operations, focusing on automation, monitoring, incident response, and proactive reliability improvements. SRE teams aim to maintain high availability and efficient system performance while balancing the speed of development with operational stability.
-# Monitoring in SRE
+## Monitoring in SRE
 
 Monitoring is one of the primary means by which service owners keep track of a system’s health and availability. A thoughtful monitoring strategy is crucial for identifying issues in real-time.
 
@@ -50,9 +123,7 @@ Monitoring is one of the primary means by which service owners keep track of a s
 
 3. **Logging**:
    - Logs are for diagnostic or forensic purposes. They are not actively monitored, and no one is expected to look at them unless something else prompts them to do so.
-# Emergency Response in SRE
-
-### Key Concepts
+## Emergency Response in SRE
 
 1. **Reliability Metrics**:
    - Reliability is determined by **Mean Time to Failure (MTTF)** and **Mean Time to Repair (MTTR)**.
@@ -68,10 +139,7 @@ Monitoring is one of the primary means by which service owners keep track of a s
 
 4. **SRE Practices**:
    - Company SRE relies on **on-call playbooks** and **exercises** like the “Wheel of Misfortune” to prepare engineers for effective emergency response.
-# Change Management in SRE
-
-### Key Concepts
-
+## Change Management in SRE
 1. **Cause of Outages**:
    - Roughly **70% of outages** are caused by changes in a live system.
 
@@ -90,9 +158,7 @@ Monitoring is one of the primary means by which service owners keep track of a s
 
 4. **Resulting Improvements**:
    - The outcome is a combination of **increased release velocity** and **improved safety** in deployments.
-# Demand Forecasting and Capacity Planning
-
-### Key Concepts
+## Demand Forecasting and Capacity Planning
 
 1. **Goal of Demand Forecasting and Capacity Planning**:
    - Ensure sufficient **capacity** and **redundancy** to serve projected future demand with the required availability.
@@ -108,9 +174,7 @@ Monitoring is one of the primary means by which service owners keep track of a s
 
 4. **SRE's Role in Capacity Planning**:
    - Since capacity is critical to service availability, the **SRE team** must be responsible for both **capacity planning** and **provisioning**.
-# Provisioning
-
-### Key Concepts
+## Provisioning
 
 1. **Provisioning Overview**:
    - Provisioning combines both **change management** and **capacity planning**.
@@ -122,9 +186,7 @@ Monitoring is one of the primary means by which service owners keep track of a s
 
 3. **Best Practices**:
    - **Treat provisioning with extra caution**, given its complexity and the importance of ensuring new capacity works as needed.
-# Efficiency and Performance
-
-### Key Concepts
+## Efficiency and Performance
 
 1. **Importance of Resource Efficiency**:
    - Efficient use of resources is critical when a service cares about its **costs**.
@@ -145,9 +207,7 @@ Monitoring is one of the primary means by which service owners keep track of a s
 4. **Provisioning and Performance**:
    - SREs target specific response speeds when provisioning to meet **capacity goals**.
    - Both **SREs** and **product developers** actively monitor and modify the service to improve **performance**, increase capacity, and enhance efficiency.
-# Managing Risk
-
-### Key Concepts
+## Managing Risk
 
 1. **Importance of Reducing Failure**:
    - Unreliable systems can erode **users' confidence**, so reducing the chance of failure is a priority.
@@ -168,9 +228,7 @@ Monitoring is one of the primary means by which service owners keep track of a s
 
 5. **Goal**:
    - Explicitly balancing **reliability** and **cost**, allowing for thoughtful risk-taking decisions that align with business priorities.
-# Measuring Service Risk
-
-### Key Concepts
+## Measuring Service Risk
 
 1. **Objective Metrics for Optimization**:
    - At Company, we aim to identify an **objective metric** to represent the properties we want to optimize in a system.
@@ -208,9 +266,7 @@ Monitoring is one of the primary means by which service owners keep track of a s
 7. **Tracking Performance Against Availability Targets**:
    - **Quarterly availability targets** are set for services and performance is tracked **weekly** or **daily**.
    - This allows the team to manage the service to a high-level availability objective, addressing any **deviations** as they arise.
-# Risk Tolerance of Services
-
-### Key Concepts
+## Risk Tolerance of Services
 
 1. **Defining Risk Tolerance**:
    - The **risk tolerance** of a service refers to the acceptable level of risk or failure the service can endure before it impacts business goals.
@@ -256,42 +312,41 @@ Monitoring is one of the primary means by which service owners keep track of a s
      - **AdSense** has a more relaxed latency requirement because it serves ads asynchronously, allowing for greater flexibility in provisioning and reducing operational costs.
    - Different services have different **latency goals**, which influence how they are engineered and provisioned.
 
-### Summary
-
-Risk tolerance is a complex and multifaceted concept that depends on service type, business goals, and cost considerations. For consumer services, it's often easier to define, with clear product ownership and expectations. For infrastructure services, the lack of direct product teams requires more collaboration to assess and define appropriate risk tolerance.
-# Identifying the Risk Tolerance of Infrastructure Services
+>### Summary
+>Risk tolerance is a complex and multifaceted concept that depends on service type, business goals, and cost considerations. For consumer services, it's often easier to define, with clear product ownership and expectations. For infrastructure services, the lack of direct product teams requires more collaboration to assess and define appropriate risk tolerance.
+## Identifying the Risk Tolerance of Infrastructure Services
 
 Identifying the risk tolerance of infrastructure services involves understanding how different users interact with the service and determining acceptable levels of performance, availability, and reliability based on those needs. The process is more complex than for consumer services because infrastructure components often serve multiple clients with varying requirements.
 
-## Key Considerations for Identifying Risk Tolerance in Infrastructure Services
+### Key Considerations for Identifying Risk Tolerance in Infrastructure Services
 
-### 1. Target Level of Availability
+#### 1. Target Level of Availability
 - Infrastructure services like Bigtable serve different types of users with distinct requirements. For instance, some services need low-latency and high reliability, while others prioritize throughput. It's crucial to tailor the infrastructure to meet these needs by offering different service levels.
 - For example, Bigtable can have both low-latency and throughput clusters. The low-latency clusters ensure high reliability and short queues for real-time applications, while throughput clusters are optimized for performance with less redundancy and relaxed latency, offering a more cost-effective solution for bulk processing.
 
-### 2. Types of Failures
+#### 2. Types of Failures
 - Different failure types have varying impacts depending on the user's needs. For instance, a low-latency user may experience a poor experience if the system queues are long, while a user focused on offline analysis may prefer a system that processes at maximum throughput even if some requests are delayed.
 - Failure tolerance can vary greatly. Some services can endure scheduled maintenance outages, while others cannot afford any downtime. The infrastructure must account for these differences by offering different levels of service.
 
-### 3. Cost Considerations
+#### 3. Cost Considerations
 - The cost of achieving certain levels of reliability or latency is a significant factor in setting risk tolerance. For instance, achieving higher availability often requires more infrastructure resources, which increases operational costs. Services need to weigh these costs against the business needs.
 - As an example, Bigtable’s cost for low-latency clusters is much higher than for throughput clusters, but this trade-off allows for more flexibility and cost savings when optimized for different service levels.
    
-### 4. Explicitly Defined Service Levels
+#### 4. Explicitly Defined Service Levels
 - To manage the different requirements effectively, infrastructure services often offer distinct levels of service, each with different performance, reliability, and cost characteristics. For example, critical data might be stored in a highly available, globally consistent datastore, while less important data could reside in a lower-cost, eventually consistent store.
 - The key to managing infrastructure risk tolerance is to externalize the difference in costs and service guarantees, enabling clients to select the level of service that best fits their needs while understanding the trade-offs.
 
-## Example: Frontend Infrastructure
-- Company’s frontend infrastructure, responsible for handling user requests, must deliver a high level of reliability since failures here directly affect user experience. Ensuring availability and quick response times is crucial, as lost requests cannot be retried once they fail.
-- These systems are designed with high reliability in mind to meet the strict needs of consumer-facing services. However, even in such critical systems, the level of reliability might still vary based on factors like traffic load, redundancy, and infrastructure configuration.
+> ### Example: Frontend Infrastructure
+>- Company’s frontend infrastructure, responsible for handling user requests, must deliver a high level of reliability since failures here directly affect user experience. Ensuring availability and quick response times is crucial, as lost requests cannot be retried once they fail.
+>- These systems are designed with high reliability in mind to meet the strict needs of consumer-facing services. However, even in such critical systems, the level of reliability might still vary based on factors like traffic load, redundancy, and infrastructure configuration.
 
-## Conclusion
+### Conclusion
 In summary, identifying the risk tolerance of infrastructure services is about balancing the varying needs of different users (low latency vs. throughput, high reliability vs. cost-effectiveness) and offering flexible service levels that allow clients to make informed decisions about reliability and cost trade-offs. This approach helps manage infrastructure resources efficiently while ensuring that different types of users can rely on the service according to their specific requirements.
-# Forming Your Error Budget
+## Forming Your Error Budget
 
 To make informed decisions about the amount of risk a service can tolerate, teams use an **error budget**, which is based on the **Service Level Objective (SLO)**. The error budget provides an objective metric that specifies how much unreliability is acceptable within a given time period (usually a quarter). This approach removes subjective negotiations between teams and helps manage service reliability.
 
-## Key Practices for Forming an Error Budget:
+### Key Practices for Forming an Error Budget:
 
 1. **Defining the SLO:**
    - **Product Management** defines an SLO, which sets expectations for how much uptime a service should have per quarter.
@@ -305,16 +360,16 @@ To make informed decisions about the amount of risk a service can tolerate, team
 4. **Using the Error Budget:**
    - As long as the actual uptime is above the SLO, meaning there is still error budget remaining, new releases can be pushed.
 
-### Example:
-- If a service has an SLO to successfully serve **99.999%** of all queries in a quarter, the error budget allows a failure rate of **0.001%**.
-- If a problem causes a failure of **0.0002%** of the queries, it consumes **20%** of the service’s quarterly error budget.
+> #### Example:
+>- If a service has an SLO to successfully serve **99.999%** of all queries in a quarter, the error budget allows a failure rate of **0.001%**.
+>- If a problem causes a failure of **0.0002%** of the queries, it consumes **20%** of the service’s quarterly error budget.
 
 This structured approach helps teams assess the service's reliability objectively and manage risk appropriately within defined limits.
-# Benefits of Error Budgets
+## Benefits of Error Budgets
 
 The main benefit of an error budget is that it provides a **common incentive** that aligns both **product development** and **SRE (Site Reliability Engineering)** teams to focus on finding the right balance between **innovation** and **reliability**.
 
-## Key Benefits and Practices:
+### Key Benefits and Practices:
 
 1. **Managing Release Velocity:**
    - Many products use an error budget control loop to manage release velocity. As long as the system’s **SLOs** are met, releases can continue.
@@ -335,9 +390,9 @@ The main benefit of an error budget is that it provides a **common incentive** t
 5. **Balancing Reliability and Innovation:**
    - The error budget also helps identify the costs of setting overly high reliability targets, which can lead to **inflexibility** and **slow innovation**.
    - If the team faces challenges in launching new features, they may decide to **loosen the SLO** (and thus increase the error budget) to promote more innovation.
-# Service Level Terminology
+## Service Level Terminology
 
-## Indicators (SLI)
+### Indicators (SLI)
 An **SLI (Service Level Indicator)** is a carefully defined **quantitative measure** of some aspect of the level of service that is provided.
 
 Common SLIs include:
@@ -356,7 +411,7 @@ Although 100% availability is impossible, near-100% availability is often achiev
 - **99.999%** is “5 nines” availability.
 - The current published target for Company Compute Engine availability is **99.95%** or "three and a half nines."
 
-## Objectives (SLO)
+### Objectives (SLO)
 An **SLO (Service Level Objective)** is a target value or range of values for a service level that is measured by an SLI. A typical SLO structure is: 
 
 ```
@@ -368,7 +423,7 @@ Choosing an appropriate SLO can be complex. For example, while you may not contr
 
 Although 100 milliseconds for latency is arbitrary, **fast is better than slow** in general. Studies suggest that user-experienced latency above certain values can drive users away.
 
-## Agreements (SLA)
+### Agreements (SLA)
 An **SLA (Service Level Agreement)** is an explicit or implicit contract with users that includes the consequences of meeting or missing the SLOs contained within it. Consequences are often **financial** (e.g., rebates or penalties), but can take other forms.
 
 ### Difference Between SLO and SLA:
@@ -377,20 +432,20 @@ An **SLA (Service Level Agreement)** is an explicit or implicit contract with us
 
 SRE teams don’t typically construct SLAs because SLAs are tied to **business and product decisions**. However, SREs do help avoid the consequences of missed SLOs and are involved in defining the SLIs to ensure there is an objective way to measure the SLOs in the agreement.
 
-### Example:
-Company Search doesn’t have an SLA for the public, but if it's unavailable, it affects **reputation** and **advertising revenue**. Many other Company services, such as Company for Work, do have explicit SLAs.
+> #### Example:
+>Company Search doesn’t have an SLA for the public, but if it's unavailable, it affects **reputation** and **advertising revenue**. Many other Company services, such as Company for Work, do have explicit SLAs.
 
 Whether or not a service has an SLA, defining SLIs and SLOs is valuable for managing the service.
-# Indicators in Practice
+## Indicators in Practice
 
-## Identifying Meaningful Metrics
+### Identifying Meaningful Metrics
 Selecting appropriate metrics to measure your service’s performance involves understanding what matters to both **you** and **your users**. Avoid tracking every possible metric—focus on a **handful of representative indicators** to evaluate and reason about the system’s health effectively.
 
 ### Key Guidelines:
 - **Too Many Indicators**: Overwhelms focus and makes it hard to prioritize.
 - **Too Few Indicators**: Risks overlooking significant system behaviors.
 
-## What Do You and Your Users Care About?
+### What Do You and Your Users Care About?
 Your choice of **Service Level Indicators (SLIs)** should reflect what your users value most. Different types of services prioritize different indicators:
 
 ### Categories of SLIs by Service Type:
@@ -414,11 +469,11 @@ Your choice of **Service Level Indicators (SLIs)** should reflect what your user
    - **Key Question**: Was the correct answer returned, the right data retrieved, or the right analysis done?
    - While correctness is critical for system health, it often pertains to the **data** rather than the **infrastructure** itself and may not fall under SRE responsibility.
 
-## Summary
+### Summary
 Focusing on the SLIs most relevant to your service type and user needs ensures effective monitoring and better system health management.
-# Collecting Indicators
+## Collecting Indicators
 
-## Server-Side vs. Client-Side Metrics
+### Server-Side vs. Client-Side Metrics
 - **Server-Side Metrics**:
   - Gathered using monitoring systems like Borgmon (see Chapter 10) or Prometheus.
   - Example: HTTP 500 responses as a fraction of all requests.
@@ -471,11 +526,11 @@ Focusing on the SLIs most relevant to your service type and user needs ensures e
 
 ---
 
-## Summary
-Effective monitoring of indicators requires thoughtful collection, careful aggregation, and standardized definitions. Using distributions and high-percentile values ensures deeper insights into system behavior, while standardized templates save effort and foster consistency.
-# Objectives in Practice
+> ### Summary
+>Effective monitoring of indicators requires thoughtful collection, careful aggregation, and standardized definitions. Using distributions and high-percentile values ensures deeper insights into system behavior, while standardized templates save effort and foster consistency.
+## Objectives in Practice
 
-## Start with User Needs
+### Start with User Needs
 - Begin by identifying what **users care about**, not just what is easy to measure.
 - Users' needs may be difficult or impossible to measure directly, so **approximate their needs** instead.
 - Avoid starting with what’s easy to measure—this often leads to less meaningful SLOs.
@@ -483,35 +538,40 @@ Effective monitoring of indicators requires thoughtful collection, careful aggre
   - Start from **desired objectives** and work backward to identify specific indicators.
   - This method ensures that SLOs align with user priorities.
 
----
-
-## Defining Objectives
+### Defining Objectives
 - SLOs should be clear about:
   - **How they are measured**.
   - **Conditions under which they’re valid**.
 
-### Examples:
+#### Examples:
 - Full Definition:  
   `99% (averaged over 1 minute) of Get RPC calls will complete in less than 100 ms (measured across all backend servers).`
 - Using Defaults:  
   `99% of Get RPC calls will complete in less than 100 ms.`
 
-### Multi-Target SLOs:
+#### Multi-Target SLOs:
 - When performance curve details matter, use multiple SLO targets:
   - `90% of Get RPC calls will complete in < 1 ms.`
   - `99% of Get RPC calls will complete in < 10 ms.`
   - `99.9% of Get RPC calls will complete in < 100 ms.`
 
-### Heterogeneous Workloads:
+#### Heterogeneous Workloads:
 - Define separate SLOs for different user needs:
   - **Throughput-focused users**:  
     `95% of throughput clients’ Set RPC calls will complete in < 1 s.`
   - **Latency-focused users**:  
     `99% of latency clients’ Set RPC calls with payloads < 1 kB will complete in < 10 ms.`
 
----
+# **SLO (Service Level Objective)**
 
-## Error Budgets
+A **Service Level Objective (SLO)** is a specific, measurable target for the performance or reliability of a service, often expressed as a percentage over a defined time period. It represents the expected level of service agreed upon between stakeholders, serving as a benchmark for evaluating system health.
+
+For example: "99.9% of requests should respond within 200ms over the last 30 days."
+
+SLOs are typically derived from **SLAs (Service Level Agreements)** and tracked using **SLIs (Service Level Indicators)** to guide operational priorities and reliability efforts.
+
+## Managing SLO
+### Error Budgets
 - **100% SLO compliance is neither realistic nor desirable**:
   - Stifles innovation and deployments.
   - Encourages costly, overly conservative solutions.
@@ -520,9 +580,7 @@ Effective monitoring of indicators requires thoughtful collection, careful aggre
   - Track daily, weekly, or monthly performance.
   - Align deployment processes with error budget consumption.
 
----
-
-## Choosing SLO Targets
+### Choosing SLO Targets
 - **Avoid setting targets based solely on current performance**:
   - Prevents improvement and locks in suboptimal systems.
 - **Keep SLO definitions simple**:
@@ -535,24 +593,20 @@ Effective monitoring of indicators requires thoughtful collection, careful aggre
 - **Refine over time**:
   - Start with loose targets and tighten them as system behavior becomes better understood.
 
----
-
-## Control Measures
+### Control Measures
 SLOs are integral to system management through control loops:
 1. **Monitor and measure** SLIs.
 2. **Compare** SLIs to SLOs.
 3. **Determine actions** needed to meet targets.
 4. **Take action** based on findings.
 
-### Example:
-- If latency is rising and threatens to exceed the SLO:
-  1. Hypothesize that servers are CPU-bound.
-  2. Add more servers to balance the load.
+> Example:
+> If latency is rising and threatens to exceed the SLO:
+>  1. Hypothesize that servers are CPU-bound.
+>  2. Add more servers to balance the load.
 
----
-
-## Publishing SLOs
-- **Set expectations** for system behavior:
+### Publishing SLOs
+  - **Set expectations** for system behavior:
   - Help users determine whether the system fits their needs.
   - Example:  
     - A photo-sharing website might avoid a service prioritizing durability over availability.
@@ -568,16 +622,14 @@ SLOs are integral to system management through control loops:
     - Introduce planned outages (e.g., Company’s Chubby service).
     - Throttle requests or design the system to handle predictable loads.
 
----
-
-## SLOs as Prioritization Tools
+### SLOs as Prioritization Tools
 - Good SLOs align development efforts with user priorities.
 - Poorly defined SLOs lead to:
   - **Wasted work** (overly aggressive targets).
   - **Bad products** (targets too lax).
 - SLOs are powerful drivers of focus and resource allocation:
   - Use them wisely to balance system performance, innovation, and user satisfaction.
-# Agreements in Practice
+# SLA: Agreements in Practice
 
 ## Crafting an SLA
 - **SLA (Service Level Agreement)**: A formal contract that defines consequences and penalties for breaches of service expectations.
@@ -590,16 +642,12 @@ SLOs are integral to system management through control loops:
   - Assess the **difficulty** of achieving the agreed-upon service levels.
 - Provide guidance on the technical feasibility and operational implications of the SLA.
 
----
-
-## Applying SLO Principles to SLAs
+### Applying SLO Principles to SLAs
 - **Much of the advice for crafting SLOs** applies to SLAs:
   - Ensure clarity, realism, and alignment with user needs.
   - Avoid setting overly ambitious targets that may lead to penalties.
 
----
-
-## Being Conservative in SLAs
+### Being Conservative in SLAs
 - Advertised SLAs should err on the side of caution:
   - **Broader constituencies** make SLAs harder to modify or remove.
   - Changes to unwise or overly ambitious SLAs can disrupt user trust and satisfaction.
@@ -607,7 +655,7 @@ SLOs are integral to system management through control loops:
 ### Best Practices:
 - **Set achievable targets** based on system capabilities.
 - **Review periodically** to ensure relevance as system requirements evolve.
-# Toil Defined
+# Toil vs Engineering
 
 ## What Is Toil?
 Toil is **not**:
@@ -624,9 +672,7 @@ Toil is work tied to **running a production service** that is:
 - **Devoid of enduring value**: Doesn’t result in permanent improvement to the service.
 - **Scales linearly (O(n)) with service growth**: Increases with traffic volume or user count.
 
----
-
-## Why Less Toil Is Better
+### Why Less Toil Is Better
 - **50% Goal**: SREs should spend **less than 50% of their time on toil**.
   - Remaining time should go toward:
     - Reducing future toil.
@@ -638,9 +684,7 @@ Toil is work tied to **running a production service** that is:
   - SRE is **not an Ops organization**.
   - SRE hires are promised an engineering role, not a purely operational one.
 
----
-
-## Calculating Toil
+### Calculating Toil
 - **Minimum Toil (On-Call Duties)**:
   - A 6-person rotation means 2 out of every 6 weeks (33%) are dedicated to on-call.
   - An 8-person rotation reduces this to 25%.
@@ -655,15 +699,11 @@ Toil is work tied to **running a production service** that is:
     - Distribute workload evenly.
     - Help SREs focus on satisfying engineering projects.
 
----
-
-## Key Takeaways
-- **Toil must be managed** to ensure time is spent effectively on engineering.
-- **Automation and strategy** are critical tools for reducing toil.
-- **Balancing toil** reinforces the promise of SRE as an engineering-focused discipline.
-# What Qualifies as Engineering?
-
-## Characteristics of Engineering Work
+>### Key Takeaways
+>- **Toil must be managed** to ensure time is spent effectively on engineering.
+>- **Automation and strategy** are critical tools for reducing toil.
+>- **Balancing toil** reinforces the promise of SRE as an engineering-focused discipline.
+## What is Engineering?
 Engineering work is:
 - **Novel**: Requires human judgment and creativity.
 - **Strategic**: Guided by broader goals and strategies, not just immediate needs.
@@ -671,9 +711,8 @@ Engineering work is:
 - **Scalable**: Enables handling of more services or larger services without additional headcount.
 - **Generalizable**: Solutions are often designed to solve broader problems.
 
----
-
-## Categories of Engineering Work
+### Categories Work
+#### A. Engineering
 1. **Software Engineering**:
    - Writing or modifying code, including associated design and documentation.
    - Examples:
@@ -687,34 +726,31 @@ Engineering work is:
      - Updating monitoring setups.
      - Configuring load balancers.
      - Consulting on architecture and productionization for Dev teams.
-
-3. **Overhead** (Not Engineering):
+#### B. Not Engineering
+1. **Overhead**:
    - Administrative work not directly tied to production services.
    - Examples:
      - HR paperwork.
      - Meetings, training, or bug queue hygiene.
 
-4. **Toil** (Not Engineering):
+2. **Toil**:
    - Manual, repetitive work tied to running a production service (e.g., handling alerts, manually executing scripts).
 
----
 
 ## Balance Between Toil and Engineering
 - **50% Rule**:
   - SREs should spend **at least 50% of their time** on engineering projects.
   - Toil should not dominate over time and should be minimized through engineering solutions.
 
----
+### Is Toil Always Bad?
 
-# Is Toil Always Bad?
-
-### When Toil Is Acceptable:
+#### A. When Toil Is Acceptable:
 - Small, predictable amounts of toil can:
   - Be calming and stress-free.
   - Provide a sense of accomplishment with quick wins.
   - Suit individuals who prefer repetitive tasks.
 
-### When Toil Becomes Toxic:
+#### B. When Toil Becomes Toxic:
 1. **Career Stagnation**:
    - Excessive toil leaves little time for impactful engineering work, limiting career growth.
 2. **Low Morale**:
@@ -726,9 +762,7 @@ Engineering work is:
    - **Attrition**: Talented engineers may leave for better opportunities.
    - **Breach of Faith**: Betrays the promise of a balanced engineering role for new hires.
 
----
-
-# Reducing Toil: A Collective Effort
+## Reducing Toil: A Collective Effort
 - Each SRE should commit to:
   - Eliminating small amounts of toil weekly through engineering.
   - Focusing on scalable solutions and strategic improvements.
@@ -737,7 +771,7 @@ Engineering work is:
   - Create tools and frameworks to minimize repetitive tasks.
   - Dedicate efforts to innovative engineering projects, not firefighting.
 
-**Conclusion**: Let’s invent more and toil less.
+>**Conclusion**: Let’s invent more and toil less.
 # Monitoring Distributed Systems
 
 ## Definitions
@@ -759,8 +793,6 @@ Engineering work is:
 
 2. **Black-box Monitoring**:
    - Tests **externally visible behavior** as a user would experience it.
-
----
 
 ### Alert
 - A notification pushed to systems like:
@@ -790,8 +822,6 @@ Engineering work is:
   - **Running software** (e.g., deployment).
   - **Configuration** (e.g., infrastructure updates).
 
----
-
 ## Reasons to Monitor
 1. **Analyze Long-Term Trends**:
    - Database size and growth rate.
@@ -816,8 +846,6 @@ Engineering work is:
      - **Something is broken**: Immediate human intervention required.
      - **Something may break soon**: Preemptive action recommended.
 
----
-
 ## Effective Alerting
 - **Purpose**: Enable the system to notify humans when:
   - A problem exists.
@@ -828,8 +856,6 @@ Engineering work is:
     - Reduce unnecessary pages to avoid desensitization.
     - Maintain trust in the alerting system.
 
----
-
 ## Alerting Costs
 - **Human Impact**:
   - Pages interrupt workflows and personal time.
@@ -838,8 +864,6 @@ Engineering work is:
 - **Mitigation**:
   - Design alerting systems with meaningful thresholds.
   - Avoid triggering alerts for minor or speculative issues.
-
----
 
 ## Conclusion
 Monitoring and alerting are essential for:
