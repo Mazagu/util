@@ -14,14 +14,14 @@
 ---
 
 ## 2. Fine-Tuning vs Prompting
-
+```
 | Feature             | Prompting                     | Fine-Tuning                        |
 |---------------------|-------------------------------|------------------------------------|
 | Customization Level | Shallow control               | Deep behavior adaptation           |
 | Speed               | Instant                       | Takes time/resources               |
 | Use Case            | General tasks                 | Domain-specific or sensitive tasks |
 | Cost                | Low                           | Medium to High                     |
-
+```
 ---
 
 ## 3. Fine-Tuning Example: BERT for Sentiment Analysis

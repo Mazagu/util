@@ -31,13 +31,13 @@ This lets each token "attend" to others, capturing dependencies regardless of di
 ---
 
 ## 3. Encoder vs Decoder
-
+```
 | Component | Role                          | Example Use           |
 |----------|-------------------------------|------------------------|
 | Encoder  | Bidirectional understanding    | BERT, RoBERTa          |
 | Decoder  | Autoregressive generation      | GPT, LLaMA             |
 | Encoder-Decoder | Translation, Summarization | T5, BART, mT5         |
-
+```
 ---
 
 ## 4. Example: Minimal Transformer Block (PyTorch)
@@ -67,7 +67,7 @@ class TransformerBlock(nn.Module):
 ---
 
 ## 5. Real-World Transformer Models
-
+```
 | Model   | Type         | Purpose                    |
 |---------|--------------|----------------------------|
 | BERT    | Encoder       | Classification, QA         |
@@ -75,7 +75,7 @@ class TransformerBlock(nn.Module):
 | T5      | Encoder-Decoder| Summarization, translation|
 | ViT     | Encoder       | Vision tasks               |
 | SAM     | Encoder-Decoder | Image segmentation       |
-
+```
 ---
 
 ## 6. Applications of Transformers

@@ -112,7 +112,6 @@ transform = transforms.Compose([
 
 ## 📚 Further Resources
 
-- [PyTorch Vision Tutorials](https://pytorch.org/vision/stable/tutorials.html)
 - [CS231n: Convolutional Neural Networks for Visual Recognition](http://cs231n.stanford.edu/)
 - [Ultralytics YOLOv8 Docs](https://docs.ultralytics.com/)
 - [FastAI: Vision Course](https://course.fast.ai/)

@@ -14,19 +14,19 @@
 ---
 
 ## 2. Key Concepts
-
+```
 | Term                 | Description                                          |
 |----------------------|------------------------------------------------------|
 | **Training Set**     | Used to train the model                             |
 | **Validation Set**   | Used for tuning (cross-validation, early stopping)  |
 | **Test Set**         | Final performance check, never touched during training |
-
+```
 ---
 
 ## 3. Common Evaluation Metrics
 
 ### For **Classification**
-
+```
 | Metric       | Use Case                                   |
 |--------------|---------------------------------------------|
 | Accuracy     | % correct predictions                       |
@@ -34,7 +34,7 @@
 | Recall       | Correct positive predictions / all actual positives  |
 | F1 Score     | Harmonic mean of precision and recall       |
 | ROC-AUC      | Area under the ROC curve (binary classifiers) |
-
+```
 ```
 from sklearn.metrics import classification_report
 
@@ -47,14 +47,14 @@ print(classification_report(y_true, y_pred))
 ---
 
 ### For **Regression**
-
+```
 | Metric          | Description                               |
 |------------------|-------------------------------------------|
 | MAE (Mean Absolute Error) | Average absolute difference        |
 | MSE (Mean Squared Error)  | Penalizes large errors            |
 | RMSE                   | Square root of MSE                   |
 | R² Score               | % variance explained by model        |
-
+```
 ```
 from sklearn.metrics import mean_squared_error, r2_score
 
@@ -117,14 +117,14 @@ Also consider:
 ---
 
 ## 6. Evaluation in NLP / LLMs
-
+```
 | Task          | Metric                     |
 |---------------|-----------------------------|
 | Text classification | Accuracy, F1            |
 | Translation   | BLEU score                   |
 | Summarization | ROUGE score                  |
 | Q&A / Chatbot | Human evals, BLEU, GPT-based grading |
-
+```
 ```
 from rouge_score import rouge_scorer
 
@@ -166,7 +166,6 @@ A/B tests help compare models in real environments.
 - [Scikit-learn Metrics Docs](https://scikit-learn.org/stable/modules/model_evaluation.html)
 - [Keras Model Evaluation](https://keras.io/api/models/model_training_apis/)
 - [MLflow for experiment tracking](https://mlflow.org/)
-- [Evaluating LLM Outputs](https://www.promptingguide.ai/evaluation)
 - [HumanEval benchmark for LLM coding tasks](https://github.com/openai/human-eval)
 
 ---

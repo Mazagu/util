@@ -92,13 +92,13 @@ model = Sequential([
 ---
 
 ## 6. Bayesian vs Frequentist Learning
-
+```
 | Concept         | Bayesian                             | Frequentist                         |
 |----------------|--------------------------------------|-------------------------------------|
 | Parameters      | Distributions (random variables)     | Fixed but unknown                   |
 | Inference       | Posterior from prior + data          | Maximum likelihood / optimization  |
 | Output          | Probabilistic predictions + variance | Point estimates                     |
-
+```
 ---
 
 ## 7. When to Use Bayesian Learning

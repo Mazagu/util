@@ -89,7 +89,7 @@ Prompt: "List three pros and cons of remote work. Format as a Markdown table."
 ---
 
 ## 4. Common Use Cases
-
+```
 | Use Case             | Prompt Example |
 |----------------------|----------------|
 | Text generation      | “Write a sci-fi story in 5 sentences” |
@@ -97,7 +97,7 @@ Prompt: "List three pros and cons of remote work. Format as a Markdown table."
 | Translation          | “Translate ‘Good night’ to German” |
 | Summarization        | “Summarize this email for a manager” |
 | Style Transfer       | “Rewrite this in a more formal tone” |
-
+```
 ---
 
 ## 5. Tips for Better Prompt Engineering
@@ -132,7 +132,5 @@ Prompt: "List three pros and cons of remote work. Format as a Markdown table."
 ## 📚 Further Resources
 
 - [Awesome Prompt Engineering GitHub Repo](https://github.com/dair-ai/Prompt-Engineering-Guide)
-- [OpenAI Cookbook – Prompt Design](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_structure_prompts.md)
-- [Prompt Engineering with LLMs (DeepLearning.AI Course)](https://learn.deeplearning.ai/prompt-engineering)
 
 ---

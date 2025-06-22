@@ -18,14 +18,14 @@ Rate limiting restricts how many **requests** a client (IP, user, API key, etc.)
 ---
 
 ## 📏 2. Key Dimensions
-
+```
 | Dimension       | Examples                                |
 |------------------|------------------------------------------|
 | **Identity**     | IP address, user ID, access token         |
 | **Scope**        | Per-endpoint, per-service, per-tenant     |
 | **Granularity**  | Per second, minute, hour, day             |
 | **Limit Type**   | Fixed, dynamic, bursty                   |
-
+```
 ---
 
 ## ⚙️ 3. Rate Limiting Algorithms
@@ -92,14 +92,14 @@ else:
 ---
 
 ## 🧰 4. Where to Implement Rate Limiting?
-
+```
 | Layer         | Use Case                               | Tools / Examples             |
 |---------------|------------------------------------------|------------------------------|
 | **Client SDK** | Preemptive throttling                   | Retry logic, backoff         |
 | **API Gateway**| Global protection                       | Kong, Envoy, NGINX, AWS API Gateway |
 | **Backend**    | Per-service business limits             | Redis, Memcached             |
 | **Middleware** | Shared logic across endpoints           | Express/Flask middleware     |
-
+```
 ---
 
 ## 📊 5. Rate Limiting in Redis
@@ -133,13 +133,13 @@ Solutions:
 ## 🔄 7. Retry-After and Headers
 
 Always provide rate-limit headers:
-
+```
 | Header                  | Description                                |
 |--------------------------|--------------------------------------------|
 | `X-RateLimit-Limit`      | Total allowed requests                     |
 | `X-RateLimit-Remaining`  | Remaining requests in window               |
 | `Retry-After`            | Time to wait before retrying               |
-
+```
 This helps clients throttle themselves gracefully.
 
 ---
@@ -155,7 +155,7 @@ This helps clients throttle themselves gracefully.
 ---
 
 ## 🧱 9. Real-World Examples
-
+```
 | Service          | Strategy                                      |
 |------------------|-----------------------------------------------|
 | **GitHub API**    | 5,000 requests per hour per authenticated user |
@@ -163,18 +163,18 @@ This helps clients throttle themselves gracefully.
 | **Cloudflare**    | Custom global rate limits at the edge         |
 | **Stripe**        | Burst + steady limits, HTTP 429 with Retry-After |
 | **AWS API Gateway** | Token bucket model per stage + method         |
-
+```
 ---
 
 ## ✅ Summary
-
+```
 | Aspect         | Key Points                                    |
 |----------------|-----------------------------------------------|
 | Purpose        | Protect systems from abuse and overload       |
 | Algorithms     | Fixed window, sliding window, token/leaky bucket |
 | Deployment     | Gateway, backend, middleware                  |
 | Tools          | Redis, Envoy, Kong, NGINX, AWS, Cloudflare    |
-
+```
 ---
 
 ## 📚 Further Reading
@@ -182,6 +182,5 @@ This helps clients throttle themselves gracefully.
 - [Rate Limiting Algorithms Demystified (Cloudflare)](https://blog.cloudflare.com/counting-things-a-lot-of-different-things/)
 - [AWS Rate Limiting Docs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-request-throttling.html)
 - [Envoy Rate Limiting Filter](https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/rate_limit_filter)
-- [Leaky Bucket and Token Bucket Visualized](https://www.youtube.com/watch?v=KpLZV-TG5VY)
 
 ---

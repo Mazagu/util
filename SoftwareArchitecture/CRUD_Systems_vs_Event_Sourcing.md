@@ -9,14 +9,14 @@ Modern applications can manage state using **CRUD (Create, Read, Update, Delete)
 In a **CRUD** system, you interact directly with **current state** stored in a database. It’s the default pattern in relational systems.
 
 ### 🔧 Typical CRUD Operations
-
+```
 | Action   | SQL Example                          |
 |----------|--------------------------------------|
 | Create   | `INSERT INTO orders (...)`           |
 | Read     | `SELECT * FROM orders WHERE id = 1`  |
 | Update   | `UPDATE orders SET status='shipped'` |
 | Delete   | `DELETE FROM orders WHERE id = 1`    |
-
+```
 ```
 -- Example: CRUD update
 UPDATE accounts SET balance = balance - 100 WHERE id = 1;
@@ -66,7 +66,7 @@ for (event of eventStream) {
 ---
 
 ## 3. 🔁 CRUD vs Event Sourcing: Side-by-Side
-
+```
 | Feature               | CRUD                           | Event Sourcing                        |
 |-----------------------|---------------------------------|----------------------------------------|
 | Stores current state  | ✅ Yes                          | ❌ No — state is derived               |
@@ -77,7 +77,7 @@ for (event of eventStream) {
 | Debugging             | ❌ Hard to reconstruct state    | ✅ Easy to replay and audit            |
 | CQRS support          | ❌ Limited                      | ✅ Common pairing                      |
 | Transactions          | ✅ Native (SQL)                 | 🟡 Requires careful coordination        |
-
+```
 ---
 
 ## 4. 📚 Use Cases for Each
@@ -137,7 +137,7 @@ Sometimes you can **get the best of both**:
 ---
 
 ## 8. 🧠 Summary Comparison Table
-
+```
 | Dimension           | CRUD                        | Event Sourcing             |
 |---------------------|-----------------------------|----------------------------|
 | Simplicity          | ✅ Simple                   | ❌ Complex initial setup   |
@@ -146,15 +146,13 @@ Sometimes you can **get the best of both**:
 | Rollback            | ❌ Hard                     | ✅ Replay past events      |
 | Storage             | ✅ Compact (current only)   | ❌ Grows over time         |
 | Read Model Custom   | ❌ Shared schema            | ✅ Any projection logic    |
-
+```
 ---
 
 ## 📚 Further Reading
 
 - [Martin Fowler: Event Sourcing](https://martinfowler.com/eaaDev/EventSourcing.html)
-- [EventStoreDB Docs](https://eventstore.com/docs/)
 - [Debezium for CDC](https://debezium.io/)
 - [CQRS and Event Sourcing Patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs)
-- [Greg Young on Event Sourcing (YouTube)](https://www.youtube.com/watch?v=JHGkaShoyNs)
 
 ---

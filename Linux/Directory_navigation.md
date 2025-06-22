@@ -1,10 +1,10 @@
-# Directory Navigation: `pwd`, `cd`, and `mkdir`
+# Directory Navigation: pwd, cd, and mkdir
 
 This guide will walk you through the essential commands for navigating and managing directories in Linux. These commands are foundational for working with the file system in the terminal.
 
 ---
 
-## 1. `pwd` - Print Working Directory
+## 1. pwd - Print Working Directory
 
 ### Description:
 The `pwd` (print working directory) command shows the current directory you're in.
@@ -65,7 +65,7 @@ cd -
 cd /home/user/Downloads
 ```
 
-## 3. `mkdir` - Make Directory
+## 3. mkdir - Make Directory
 ### Description:
 The `mkdir` (make directory) command creates a new directory.
 
@@ -96,16 +96,18 @@ mkdir -m 755 new_directory
 ```
 
 ### **Directory Navigation Cheatsheet**
+```
 
-| Command            | Description                                           | Example                          |
-|--------------------|-------------------------------------------------------|----------------------------------|
-| `pwd`              | Print the absolute path of the current directory      | `pwd`                           |
-| `cd directory`     | Change to a specific directory                        | `cd Documents`                  |
-| `cd ..`            | Move up one directory level                           | `cd ..`                         |
-| `cd ~`             | Move to the home directory                            | `cd ~`                          |
-| `cd /`             | Move to the root directory                            | `cd /`                          |
-| `cd -`             | Return to the previous directory                      | `cd -`                          |
-| `mkdir directory`  | Create a new directory                                | `mkdir new_folder`              |
-| `mkdir dir1 dir2`  | Create multiple directories                           | `mkdir folder1 folder2`         |
-| `mkdir -p path`    | Create nested directories (parents if they don't exist)| `mkdir -p parent/child/grandchild` |
-| `mkdir -m 755 dir` | Create a directory with specific permissions          | `mkdir -m 755 secure_folder`    |
+| Command            | Description                                            |
+|--------------------|--------------------------------------------------------|
+| `pwd`              | Print the absolute path of the current directory       |
+| `cd directory`     | Change to a specific directory                         |
+| `cd ..`            | Move up one directory level                            |
+| `cd ~`             | Move to the home directory                             |
+| `cd /`             | Move to the root directory                             |
+| `cd -`             | Return to the previous directory                       |
+| `mkdir directory`  | Create a new directory                                 |
+| `mkdir dir1 dir2`  | Create multiple directories                            |
+| `mkdir -p path`    | Create nested directories (parents if they don't exist)|
+| `mkdir -m 755 dir` | Create a directory with specific permissions           |
+```

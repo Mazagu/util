@@ -86,7 +86,7 @@ When state/action spaces are too large for a table, we use **Deep Q-Networks (DQ
 ---
 
 ## 4. Common Algorithms
-
+```
 | Algorithm        | Type       | Description                                      |
 |------------------|------------|--------------------------------------------------|
 | Q-Learning       | Value-based| Learn Q-values for state-action pairs           |
@@ -95,7 +95,7 @@ When state/action spaces are too large for a table, we use **Deep Q-Networks (DQ
 | REINFORCE        | Policy-based| Uses Monte Carlo policy gradient                |
 | PPO (Proximal Policy Optimization) | Policy-based | Stable and widely used in practice            |
 | A3C              | Actor-Critic | Parallelized training for faster learning       |
-
+```
 ---
 
 ## 5. Real-World Applications

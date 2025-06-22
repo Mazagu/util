@@ -43,13 +43,13 @@ y_pred = regressor.predict(X_test)
 ---
 
 ## 3. Common Algorithms
-
+```
 | Task         | Algorithms                            |
 |--------------|----------------------------------------|
 | Classification | Logistic Regression, SVM, Random Forest, k-NN, Neural Networks |
 | Regression      | Linear Regression, SVR, XGBoost, Decision Trees, Ridge/Lasso |
 | Universal       | Gradient Boosting, Neural Nets, Transformers (with labels) |
-
+```
 ---
 
 ## 4. Supervised Learning Pipeline
@@ -88,13 +88,13 @@ print("Accuracy:", accuracy_score(y_test, y_pred))
 ---
 
 ## 6. Key Evaluation Metrics
-
+```
 | Task          | Metrics                             |
 |---------------|--------------------------------------|
 | Classification| Accuracy, Precision, Recall, F1     |
 | Regression    | Mean Squared Error (MSE), R² score  |
 | All Tasks     | Cross-validation, confusion matrix  |
-
+```
 ---
 
 ## 7. When to Use Supervised Learning

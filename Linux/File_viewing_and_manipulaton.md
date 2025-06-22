@@ -1,10 +1,10 @@
-# File Viewing and Manipulation: `cat`, `echo`, `less`, `head`, `tail`, and `clear`
+# File Viewing and Manipulation: cat, echo, less, head, tail, and clear
 
 This guide provides an overview of common Linux commands to display, manipulate, and navigate file contents, as well as manage terminal output.
 
 ---
 
-## **1. `cat` - Concatenate and Display File Contents**
+## **1. cat - Concatenate and Display File Contents**
 
 ### Description:
 The `cat` command is used to display the contents of files, combine multiple files, or create new ones.
@@ -14,7 +14,7 @@ The `cat` command is used to display the contents of files, combine multiple fil
 cat [options] [file...]
 ```
 ### Common Options:
-
+```
 | Option    | Description                                      | Example                     |
 |-----------|--------------------------------------------------|-----------------------------|
 | `-n`      | Number all output lines                         | `cat -n file.txt`           |
@@ -24,7 +24,7 @@ cat [options] [file...]
 | `-T`      | Display tabs as `^I`                            | `cat -T file.txt`           |
 | `-E`      | Display a `$` at the end of each line           | `cat -E file.txt`           |
 | `file1 file2 > combined` | Combine multiple files into one         | `cat file1.txt file2.txt > combined.txt` |
-
+```
 
 ### Examples:
 - Display the content of a file:
@@ -39,7 +39,7 @@ cat file1.txt file2.txt > combined.txt
 ```bash
 cat -n file.txt
 ```
-## 2. `echo` - Print Text or Variables
+## 2. echo - Print Text or Variables
 ### Description:
 The `echo` command outputs text or variables to the terminal or files.
 
@@ -48,14 +48,15 @@ The `echo` command outputs text or variables to the terminal or files.
 echo [options] [string...]
 ```
 ### Common Options:
-
+```
 | Option    | Description                                         | Example                              |
 |-----------|-----------------------------------------------------|--------------------------------------|
 | `-e`      | Enable interpretation of backslash escapes          | `echo -e "Line1\nLine2"`             |
 | `-n`      | Do not output the trailing newline                 | `echo -n "No newline at the end"`    |
 | `--help`  | Display help and usage information                  | `echo --help`                        |
-
+```
 ### Common Backslash Escapes
+```
 | Escape Sequence | Description                                  | Example                             |
 |------------------|----------------------------------------------|-------------------------------------|
 | `\n`            | New line                                     | `echo -e "Line1\nLine2"`            |
@@ -64,7 +65,7 @@ echo [options] [string...]
 | `\"`            | Double quote                                 | `echo -e "She said, \"Hello!\""`    |
 | `\a`            | Alert (bell sound)                           | `echo -e "\a"`                      |
 | `\b`            | Backspace                                    | `echo -e "Text\b"`                  |
-
+```
 ### Examples:
 - Print a string:
 ```bash
@@ -78,7 +79,7 @@ echo $HOME
 ```bash
 echo "This is a line" > file.txt
 ```
-## 3. `less` - View File Contents Interactively
+## 3. less - View File Contents Interactively
 ### Description:
 The `less` command allows you to scroll through file contents interactively.
 
@@ -87,6 +88,7 @@ The `less` command allows you to scroll through file contents interactively.
 less [options] [file]
 ```
 ### Command-Line Options
+```
 | Option         | Description                                       | Example                |
 |----------------|---------------------------------------------------|------------------------|
 | `-N`           | Show line numbers                                | `less -N file.txt`     |
@@ -96,10 +98,11 @@ less [options] [file]
 | `-i`           | Ignore case in search unless uppercase is used   | `less -i file.txt`     |
 | `-p pattern`   | Start at the first occurrence of a pattern       | `less -p "search_term" file.txt` |
 | `-?` or `--help` | Display help and options                        | `less --help`          |
-
+```
 ---
 
 ### Keybindings (Interactive Navigation)
+```
 | Key            | Action                                           |
 |----------------|--------------------------------------------------|
 | `Up` / `Down`  | Scroll up/down one line                         |
@@ -114,13 +117,13 @@ less [options] [file]
 | `N`            | Repeat the last search (backward)               |
 | `h`            | Display help screen                             |
 | `q`            | Quit `less`                                     |
-
+```
 ### Example:
 - View a file:
 ```bash
 less file.txt
 ```
-## 4. `head` - Display the Beginning of a File
+## 4. head - Display the Beginning of a File
 ### Description:
 The `head` command shows the first few lines of a file (default is 10).
 
@@ -129,7 +132,7 @@ The `head` command shows the first few lines of a file (default is 10).
 head [options] [file]
 ```
 ### Common Options:
-
+```
 | Option    | Description                                   | Example                     |
 |-----------|-----------------------------------------------|-----------------------------|
 | `-n N`    | Display the first N lines of the file         | `head -n 5 file.txt`        |
@@ -137,7 +140,7 @@ head [options] [file]
 | `-q`      | Suppress file name headers when multiple files are used | `head -q file1.txt file2.txt` |
 | `-v`      | Always show file name headers                | `head -v file.txt`          |
 | `file`    | Specify the file to read from                | `head file.txt`             |
-
+```
 ### Examples:
 - Display the first 10 lines:
 ```bash
@@ -147,7 +150,7 @@ head file.txt
 ```bash
 head -n 5 file.txt
 ```
-## 5. `tail` - Display the End of a File
+## 5. tail - Display the End of a File
 ### Description:
 The `tail` command shows the last few lines of a file (default is 10). It can also be used to monitor file changes in real time.
 
@@ -156,7 +159,7 @@ The `tail` command shows the last few lines of a file (default is 10). It can al
 tail [options] [file]
 ```
 ### Common Options:
-
+```
 | Option    | Description                                           | Example                      |
 |-----------|-------------------------------------------------------|------------------------------|
 | `-n N`    | Display the last N lines of the file                  | `tail -n 10 file.txt`        |
@@ -165,7 +168,7 @@ tail [options] [file]
 | `-q`      | Suppress file name headers when multiple files are used | `tail -q file1.txt file2.txt` |
 | `-v`      | Always show file name headers                         | `tail -v file.txt`           |
 | `-F`      | Similar to `-f`, but it will attempt to reopen the file if it is rotated | `tail -F logfile.log`         |
-
+```
 ### Examples:
 - Display the last 10 lines:
 ```bash
@@ -179,7 +182,7 @@ tail -n 20 file.txt
 ```bash
 tail -f logfile.log
 ```
-## 6. `clear` - Clear Terminal Screen
+## 6. clear - Clear Terminal Screen
 ### Description:
 The `clear` command clears all output from the terminal screen.
 
@@ -194,7 +197,7 @@ clear
 ```
 ---
 # Cheatsheet: File Viewing and Manipulation
-
+```
 | Command          | Description                                      | Example                          |
 |------------------|--------------------------------------------------|----------------------------------|
 | `cat file`       | Display the contents of a file                   | `cat file.txt`                  |
@@ -207,3 +210,4 @@ clear
 | `tail -n 20 file`| Display the last 20 lines of a file              | `tail -n 20 file.txt`           |
 | `tail -f file`   | Monitor a file for changes in real time          | `tail -f logfile.log`           |
 | `clear`          | Clear the terminal screen                       | `clear`                         |
+```

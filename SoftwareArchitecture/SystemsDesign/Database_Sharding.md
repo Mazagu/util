@@ -13,13 +13,13 @@ Sharding = **splitting a large dataset** across **multiple databases or storage 
 Each shard is a **self-contained unit** responsible for a **portion** of the data.
 
 ### Sharding vs Partitioning
-
+```
 | Aspect         | Sharding                            | Partitioning (in one DB)     |
 |----------------|--------------------------------------|------------------------------|
 | Level          | Across nodes                         | Inside a single DB server    |
 | Scope          | Horizontal scale-out                 | Logical organization         |
 | Used for       | Scaling and distribution             | Query performance, archival  |
-
+```
 ---
 
 ## ⚙️ 2. Why Shard?
@@ -47,13 +47,13 @@ shard_id = hash(user_id) % num_shards
 
 ### 2️⃣ **Range-Based Sharding**
 Assign data based on a value **range**.
-
+```
 | Shard | User ID Range |
 |-------|---------------|
 | 1     | 1–1M          |
 | 2     | 1M–2M         |
 | 3     | 2M–3M         |
-
+```
 ✅ Good for queries by range  
 ❌ Risk of **hotspots** (e.g., last shard gets all new users)
 
@@ -122,14 +122,14 @@ All shards use the same schema; each handles only part of the data.
 ---
 
 ## 🧪 7. Querying Sharded Databases
-
+```
 | Query Type         | Strategy                              |
 |--------------------|----------------------------------------|
 | **Point lookup**   | Route directly to correct shard        |
 | **Range query**    | Might hit multiple shards              |
 | **Cross-shard join** | Avoid! Or pre-join in application    |
 | **Aggregation**    | Perform in parallel, merge in app layer|
-
+```
 ```
 // Application-side fan-out
 for (shard in shards) {
@@ -151,7 +151,7 @@ Tools like **Vitess**, **Citus**, and **CockroachDB** handle this automatically.
 ---
 
 ## ⚠️ 9. Sharding Gotchas
-
+```
 | Problem                      | Notes                                     |
 |-----------------------------|--------------------------------------------|
 | Cross-shard joins           | Expensive, often need application logic    |
@@ -159,7 +159,7 @@ Tools like **Vitess**, **Citus**, and **CockroachDB** handle this automatically.
 | Operational complexity      | Monitoring, backup, failover per shard     |
 | Hotspots                    | Uneven traffic on certain shards           |
 | Global uniqueness           | Must generate unique IDs across shards     |
-
+```
 ### 🔑 Solutions
 
 - Use **UUIDs or Snowflake IDs** to ensure global uniqueness
@@ -169,7 +169,7 @@ Tools like **Vitess**, **Citus**, and **CockroachDB** handle this automatically.
 ---
 
 ## 🧰 10. Tools & Technologies
-
+```
 | Tool           | Description                        |
 |----------------|------------------------------------|
 | **Vitess**     | MySQL sharding middleware, used by YouTube |
@@ -177,7 +177,7 @@ Tools like **Vitess**, **Citus**, and **CockroachDB** handle this automatically.
 | **CockroachDB**| Globally distributed, auto-sharding |
 | **MongoDB**    | Native sharding via config servers |
 | **Cassandra**  | Peer-to-peer, partitioned by key   |
-
+```
 ---
 
 ## 🧠 11. When to Use Sharding

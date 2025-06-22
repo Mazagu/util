@@ -24,7 +24,7 @@ It’s a technique to **search by meaning** rather than literal text. It uses **
 ---
 
 ## 3. Use Cases
-
+```
 | Task                     | Description                                      |
 |--------------------------|--------------------------------------------------|
 | **Semantic Search**      | "Explain gravity" ≠ exact match, still relevant |
@@ -32,7 +32,7 @@ It’s a technique to **search by meaning** rather than literal text. It uses **
 | **RAG**                  | LLM retrieves relevant context chunks           |
 | **Similarity Detection** | Near-duplicate detection                        |
 | **Multimodal Search**    | Search images by text description               |
-
+```
 ---
 
 ## 4. Example: Using FAISS for Local Vector Search
@@ -63,13 +63,13 @@ print("Top results:", [docs[i] for i in I[0]])
 ---
 
 ## 5. Vector Similarity Metrics
-
+```
 | Metric          | Use Case                              |
 |------------------|----------------------------------------|
 | **Cosine**       | Measures angle, not magnitude (text)   |
 | **L2 Distance**  | Euclidean distance (images, audio)     |
 | **Dot Product**  | Often used in neural retrieval         |
-
+```
 ```
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -79,7 +79,7 @@ cosine_similarity([vec1], [vec2])  # value between -1 and 1
 ---
 
 ## 6. Popular Vector Databases
-
+```
 | Tool        | Features                                           |
 |-------------|----------------------------------------------------|
 | **FAISS**   | Local search, fast, Facebook                      |
@@ -88,7 +88,7 @@ cosine_similarity([vec1], [vec2])  # value between -1 and 1
 | **Qdrant**  | Open source, hybrid filters                       |
 | **Chroma**  | Lightweight, built for LLM apps                   |
 | **Milvus**  | High-volume, production-grade                     |
-
+```
 ---
 
 ## 7. Example: Pinecone + OpenAI
@@ -146,6 +146,5 @@ response = llm.generate(prompt)
 - [Pinecone Docs](https://docs.pinecone.io/)
 - [Weaviate Docs](https://weaviate.io/developers/weaviate)
 - [RAG + Vector Search Overview](https://www.pinecone.io/learn/retrieval-augmented-generation/)
-- [LangChain VectorStore Docs](https://docs.langchain.com/docs/modules/data_connection/vectorstores/)
 
 ---

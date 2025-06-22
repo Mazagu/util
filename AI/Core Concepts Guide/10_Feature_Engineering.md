@@ -149,7 +149,5 @@ X_selected = selector.fit_transform(X, y)
 ## 📚 Further Resources
 
 - [Feature Engineering for ML – Book by Alice Zheng](https://www.oreilly.com/library/view/feature-engineering-for/9781491953235/)
-- [Featuretools (automated feature engineering)](https://www.featuretools.com/)
-- [Kaggle Feature Engineering Handbook](https://www.kaggle.com/code/jeffd23/feature-engineering-handbook)
 
 ---

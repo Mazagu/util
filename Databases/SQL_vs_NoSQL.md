@@ -45,6 +45,7 @@ CREATE TABLE orders (
 NoSQL databases are **non-relational** and often **schema-less**. They prioritize **scalability**, **flexibility**, and **performance** in distributed systems.
 
 ### Categories of NoSQL:
+```
 
 | Type              | Description                          | Example DBs                  |
 |-------------------|--------------------------------------|------------------------------|
@@ -52,7 +53,7 @@ NoSQL databases are **non-relational** and often **schema-less**. They prioritiz
 | **Key-Value**     | Simple key-value store               | Redis, DynamoDB              |
 | **Columnar**      | Wide tables, column families         | Cassandra, HBase             |
 | **Graph**         | Nodes and relationships              | Neo4j, ArangoDB              |
-
+```
 ### Common Features
 
 - Schema flexibility
@@ -74,18 +75,19 @@ NoSQL databases are **non-relational** and often **schema-less**. They prioritiz
 ---
 
 ## 3. ⚖️ SQL vs NoSQL: Feature Comparison
+```
 
-| Feature                 | SQL                            | NoSQL                          |
-|-------------------------|----------------------------------|--------------------------------|
+| Feature                 | SQL                             | NoSQL                         |
+|-------------------------|---------------------------------|-------------------------------|
 | Data Model              | Relational (tables)             | Varies (JSON, KV, graph, etc) |
 | Schema                  | Rigid, predefined               | Dynamic or schema-less        |
-| Transactions            | ACID-compliant                  | Often eventual consistency     |
+| Transactions            | ACID-compliant                  | Often eventual consistency    |
 | Joins                   | Native                          | Manual or limited             |
 | Query Language          | SQL                             | Varies (MongoQL, Cypher, etc) |
 | Scalability             | Vertical (scale-up)             | Horizontal (scale-out)        |
 | Use Case Fit            | OLTP, analytics, finance        | IoT, caching, user activity   |
 | Maturity                | Very mature, standardized       | Newer, varied implementations |
-
+```
 ---
 
 ## 4. 🧪 When to Choose SQL
@@ -137,44 +139,46 @@ In practice, many systems use both:
 - NoSQL for **scalable reads or event logs** (activity feeds, analytics)
 
 ### Examples
+```
 
-| Component         | Recommended DB Type     |
+| Component        | Recommended DB Type     |
 |------------------|-------------------------|
 | User auth        | PostgreSQL              |
 | Product catalog  | MongoDB or Elasticsearch|
 | Caching layer    | Redis                   |
 | Payments         | MySQL / Oracle          |
 | Event stream     | Cassandra / DynamoDB    |
-
+```
 ---
 
 ## 7. 🔍 Real-World Case Studies
+```
 
 | Company        | SQL Use                       | NoSQL Use                          |
-|----------------|-------------------------------|-------------------------------------|
-| Netflix        | MySQL for metadata            | Cassandra for viewing history       |
+|----------------|-------------------------------|------------------------------------|
+| Netflix        | MySQL for metadata            | Cassandra for viewing history      |
 | Uber           | PostgreSQL for transactions   | Riak/MongoDB for geolocation cache |
 | Facebook       | MySQL for core social graph   | RocksDB / TAO / Scuba for speed    |
-
+```
 ---
 
 ## 8. 🧠 Decision Checklist
-
-| Question                                          | If Yes → Use...     |
+```
+| Question                                         | If Yes → Use...      |
 |--------------------------------------------------|----------------------|
 | Do you need joins, constraints, and transactions?| SQL                  |
 | Is your data semi-structured or sparse?          | NoSQL                |
 | Will you have massive read/write scale?          | NoSQL                |
 | Is schema flexibility important?                 | NoSQL                |
 | Are consistency and integrity top priority?      | SQL                  |
-
+```
 ---
 
 ## 📚 Further Reading
 
 - [MongoDB vs PostgreSQL](https://www.mongodb.com/compare/mongodb-postgresql)
-- [Cassandra Data Modeling](https://cassandra.apache.org/doc/latest/data-modeling/)
-- [CAP Theorem Explained](https://www.benjamin-meyer.com/blog/what-is-cap-theorem/)
+- [Cassandra Data Modeling](https://cassandra.apache.org/doc/latest/cassandra/developing/data-modeling/index.html)
+- [CAP Theorem Explained](https://www.bmc.com/blogs/cap-theorem/)
 - [NoSQL Distilled (Book)](https://martinfowler.com/books/nosql.html)
 - [Polyglot Persistence by Fowler](https://martinfowler.com/bliki/PolyglotPersistence.html)
 

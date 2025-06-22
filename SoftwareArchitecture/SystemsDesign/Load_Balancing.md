@@ -71,7 +71,7 @@ location /api/v1/ {
 ---
 
 ## 📊 3. Load Balancing Algorithms
-
+```
 | Algorithm          | Description                                 | Use Case                         |
 |--------------------|---------------------------------------------|----------------------------------|
 | **Round Robin**     | Evenly distribute requests in order         | Stateless services               |
@@ -79,7 +79,7 @@ location /api/v1/ {
 | **IP Hash**          | Hash IP to route consistently              | Session affinity                 |
 | **Random**           | Select randomly from pool                  | Simple but not optimal           |
 | **Weighted**         | Favor stronger machines                    | Mixed-capacity nodes             |
-
+```
 ---
 
 ## ❤️ 4. Session Persistence ("Sticky Sessions")
@@ -129,18 +129,18 @@ Client → Global LB (GeoDNS / Anycast)
 ```
 
 Each layer may use a different technique and tool, e.g.:
-
+```
 | Layer             | Tool                         |
 |-------------------|------------------------------|
 | Global            | Cloudflare, Route53, GSLB    |
 | Regional          | Fastly, Akamai, AWS CloudFront |
 | L7 App Balancer   | Envoy, NGINX, ALB            |
 | Internal L4       | HAProxy, NLB, gRPC round robin|
-
+```
 ---
 
 ## 🧠 7. Trade-offs & Gotchas
-
+```
 | Concern               | Watch Out For                            |
 |-----------------------|------------------------------------------|
 | Session Affinity      | Can break scalability if not managed     |
@@ -149,11 +149,11 @@ Each layer may use a different technique and tool, e.g.:
 | Cache Invalidation    | Some LBs cache incorrectly at L7         |
 | Cold Starts           | New containers might fail health checks  |
 | Coordinated Omission  | Don’t ignore tail latencies in tests     |
-
+```
 ---
 
 ## 📚 8. Real-World Load Balancers
-
+```
 | Tool           | Type     | Notes                                |
 |----------------|----------|--------------------------------------|
 | **NGINX**      | L7       | Popular reverse proxy & HTTP LB     |
@@ -162,7 +162,7 @@ Each layer may use a different technique and tool, e.g.:
 | **AWS ALB/NLB**| L7/L4    | Fully managed, auto-scaling         |
 | **Traefik**    | L7       | Modern, cloud-native, dynamic       |
 | **Kubernetes Services** | L4/L7 | Built-in kube-proxy & ingress |
-
+```
 ---
 
 ## 🧪 9. Benchmarking Load Balancer Performance
@@ -189,7 +189,7 @@ wrk -t10 -c100 -d30s http://localhost:8080
 ---
 
 ## ✅ Summary Table
-
+```
 | Feature            | L4 Load Balancer     | L7 Load Balancer         |
 |--------------------|----------------------|---------------------------|
 | Protocol Awareness | TCP/UDP only         | HTTP, HTTPS, gRPC aware   |
@@ -197,15 +197,15 @@ wrk -t10 -c100 -d30s http://localhost:8080
 | Performance        | Faster               | Slight overhead           |
 | Flexibility        | Lower                | Very flexible             |
 | Use Case           | DBs, gRPC, raw APIs  | Web apps, APIs, proxies   |
-
+```
 ---
 
 ## 📚 Further Reading
 
-- [NGINX Load Balancing Guide](https://docs.nginx.com/nginx/load-balancing/)
+- [NGINX Load Balancing Guide](https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/)
 - [HAProxy Configuration Examples](https://www.haproxy.com/documentation/)
 - [AWS ALB vs NLB Comparison](https://aws.amazon.com/elasticloadbalancing/features/)
-- [Google SRE Book - Load Balancing](https://sre.google/sre-book/load-balancing-frontends/)
+- [Google SRE Book - Load Balancing](https://sre.google/resources/book-update/load-balancing-at-the-frontend/)
 - [Envoy Proxy Docs](https://www.envoyproxy.io/)
 
 ---

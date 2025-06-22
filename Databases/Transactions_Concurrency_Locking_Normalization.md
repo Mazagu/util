@@ -9,14 +9,15 @@ This guide covers foundational concepts that ensure data integrity, consistency,
 A **transaction** is a unit of work that must be **atomic**, **consistent**, **isolated**, and **durable**.
 
 ### 🧪 ACID Properties
+```
 
-| Property     | Description                                                        |
-|--------------|--------------------------------------------------------------------|
-| **Atomicity**  | All steps succeed or none do                                       |
-| **Consistency**| Must leave DB in valid state (constraints respected)              |
-| **Isolation**  | Transactions don't interfere with each other                      |
-| **Durability** | Once committed, it remains — even after crash                     |
-
+| Property       | Description                                          |
+|----------------|------------------------------------------------------|
+| **Atomicity**  | All steps succeed or none do                         |
+| **Consistency**| Must leave DB in valid state (constraints respected) |
+| **Isolation**  | Transactions don't interfere with each other         |
+| **Durability** | Once committed, it remains — even after crash        |
+```
 ### Example: Atomic transfer between accounts
 
 ```
@@ -33,23 +34,23 @@ COMMIT;
 ## 🔀 2. Concurrency & Isolation Levels
 
 Concurrency allows multiple transactions to run in parallel. To prevent race conditions and anomalies, databases use **isolation levels**:
-
-| Isolation Level       | Prevents...                            | Notes                        |
-|------------------------|----------------------------------------|------------------------------|
-| Read Uncommitted       | ❌ Nothing                             | Fast, unsafe                 |
-| Read Committed         | ✅ Dirty Reads                         | Default in many DBs          |
-| Repeatable Read        | ✅ Non-repeatable Reads                | Good for reads               |
-| Serializable           | ✅ Phantom Reads, full isolation       | Strict, slowest              |
-
+```
+| Isolation Level        | Prevents...                       | Notes                  |
+|------------------------|-----------------------------------|------------------------|
+| Read Uncommitted       | ❌ Nothing                        | Fast, unsafe          |
+| Read Committed         | ✅ Dirty Reads                    | Default in many DBs   |
+| Repeatable Read        | ✅ Non-repeatable Reads           | Good for reads        |
+| Serializable           | ✅ Phantom Reads, full isolation  | Strict, slowest       |
+```
 ### Common concurrency issues:
-
+```
 | Issue                  | Description                                        |
 |------------------------|----------------------------------------------------|
 | Dirty read             | Read uncommitted data                              |
 | Non-repeatable read    | Same query returns different results mid-tx        |
 | Phantom read           | New rows appear that match query mid-tx            |
 | Lost update            | Overwrite data written by another tx               |
-
+```
 ---
 
 ## 🔒 3. Locking Strategies
@@ -97,11 +98,11 @@ These are two competing strategies for modeling data in relational databases.
 - Reduces **redundancy**, improves **integrity**
 
 #### Example:
-
+```
 | Table: Orders        | Table: Customers         |
 |----------------------|--------------------------|
 | id, customer_id, ... | id, name, email, ...     |
-
+```
 ### Pros
 ✅ Smaller storage  
 ✅ Fewer anomalies  
@@ -120,11 +121,11 @@ These are two competing strategies for modeling data in relational databases.
 - Prioritizes **read performance** and **query simplicity**
 
 #### Example:
-
-| Table: Orders |
-|---------------|
+```
+| Table: Orders                          |
+|----------------------------------------|
 | id, customer_name, customer_email, ... |
-
+```
 ### Pros
 ✅ Fewer joins  
 ✅ Faster reads  
@@ -138,33 +139,33 @@ These are two competing strategies for modeling data in relational databases.
 ---
 
 ## 🆚 Comparison Table
-
-| Feature               | Normalized               | Denormalized              |
+```
+| Feature               | Normalized               | Denormalized               |
 |-----------------------|--------------------------|----------------------------|
 | Write Performance     | Better                   | Worse (updates touch more) |
 | Read Performance      | Worse (joins)            | Better (fewer joins)       |
 | Storage Usage         | Efficient                | Redundant                  |
 | Data Consistency      | Strong                   | Weaker                     |
 | Analytics Use         | Harder                   | Easier                     |
-
+```
 ---
 
 ## 🧠 Bonus: When to Choose What?
-
-| Use Case                       | Recommendation         |
-|--------------------------------|------------------------|
-| OLTP (banking, inventory)      | ✅ Normalize           |
-| OLAP (dashboards, BI)          | ✅ Denormalize         |
-| Mixed workloads                | 🤝 Hybrid (views, materialized tables)
-
+```
+| Use Case                       | Recommendation                         |
+|--------------------------------|-----------------------------------------|
+| OLTP (banking, inventory)      | ✅ Normalize                           |
+| OLAP (dashboards, BI)          | ✅ Denormalize                         |
+| Mixed workloads                | 🤝 Hybrid (views, materialized tables) |
+```
 ---
 
 ## 📚 Further Reading
 
 - [PostgreSQL Transaction Docs](https://www.postgresql.org/docs/current/tutorial-transactions.html)
-- [SQL Isolation Levels Explained](https://habr.com/en/post/112754/)
+- [SQL Isolation Levels Explained](https://www.cockroachlabs.com/blog/sql-isolation-levels-explained/)
 - [Optimistic vs Pessimistic Locking (Baeldung)](https://www.baeldung.com/jpa-optimistic-locking)
 - [Normalization Forms (1NF to 5NF)](https://www.studytonight.com/dbms/database-normalization.php)
-- [Martin Kleppmann - CRDTs, Transactions, and Concurrency](https://martin.kleppmann.com/papers.html)
+- [Martin Kleppmann - CRDTs, Transactions, and Concurrency](https://martin.kleppmann.com/2020/07/06/crdt-hard-parts-hydra.html)
 
 ---

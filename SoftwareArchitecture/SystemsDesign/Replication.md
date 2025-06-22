@@ -52,13 +52,13 @@ Every node shares state changes with peers (e.g. Cassandra, Dynamo).
 ---
 
 ## ⏱️ 3. Sync vs Async Replication
-
+```
 | Type           | Description                            | Trade-offs                                |
 |----------------|----------------------------------------|--------------------------------------------|
 | **Synchronous** | Waits for replica to acknowledge       | Strong consistency, higher write latency   |
 | **Asynchronous**| Returns immediately after master write | Low latency, risk of data loss on failure  |
 | **Semi-Sync**   | Master waits for one replica           | Balance between safety and speed           |
-
+```
 ---
 
 ## 🧪 4. Consistency Trade-offs
@@ -100,18 +100,18 @@ sentinel failover mymaster
 ---
 
 ## 📊 6. Use Cases and Real-World Systems
-
+```
 | Use Case               | Replication Strategy            | Example Systems               |
 |------------------------|----------------------------------|-------------------------------|
 | Read-heavy workloads   | Master–replica, async            | MySQL, PostgreSQL, Redis      |
 | Global low latency     | Geo-replication, eventual        | DynamoDB, Cassandra           |
 | High consistency needed| Quorum or synchronous writes     | CockroachDB, Spanner, etcd    |
 | Streaming updates      | Change Data Capture (CDC)        | Debezium, Kafka Connect       |
-
+```
 ---
 
 ## ⚠️ 7. Common Challenges
-
+```
 | Problem                    | Notes                                      |
 |----------------------------|--------------------------------------------|
 | Replication lag            | Async replicas behind master writes        |
@@ -119,11 +119,11 @@ sentinel failover mymaster
 | Conflict resolution        | Needed for multi-master scenarios          |
 | Data loss on crash         | Async replicas may miss recent writes      |
 | Write amplification        | More writes = more replication overhead    |
-
+```
 ---
 
 ## 📚 8. Replication in Databases and Systems
-
+```
 | System         | Strategy                 | Notes                                 |
 |----------------|--------------------------|---------------------------------------|
 | **PostgreSQL** | Streaming replication    | Logical & physical, WAL-based         |
@@ -132,7 +132,7 @@ sentinel failover mymaster
 | **Cassandra**  | Quorum + gossip          | Tunable consistency                   |
 | **Kafka**      | Log replication          | ISR (in-sync replicas) model          |
 | **Redis**      | Master-replica, Sentinel | Redis Cluster for sharded replication |
-
+```
 ---
 
 ## 🧠 9. Designing for Replication
@@ -145,14 +145,14 @@ sentinel failover mymaster
 ---
 
 ## ✅ Summary
-
+```
 | Aspect          | Key Idea                                  |
 |-----------------|--------------------------------------------|
 | Purpose         | Redundancy for availability + scalability |
 | Modes           | Master-replica, multi-master, P2P         |
 | Trade-offs      | Consistency vs latency vs availability    |
 | Real-world use  | Used in databases, queues, file systems   |
-
+```
 ---
 
 ## 📚 Further Reading

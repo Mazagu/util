@@ -24,7 +24,7 @@ Client → API Gateway → Auth Service
 ---
 
 ## 🎯 2. Why Use an API Gateway?
-
+```
 | Purpose               | Benefit                                         |
 |------------------------|------------------------------------------------|
 | **Decoupling**         | Clients are not tied to internal service structure |
@@ -34,11 +34,11 @@ Client → API Gateway → Auth Service
 | **Protocol Translation**| Converts REST ↔ gRPC ↔ WebSockets            |
 | **Aggregation**        | Combines responses from multiple services     |
 | **Monitoring**         | Unified logging and metrics                   |
-
+```
 ---
 
 ## 🧱 3. Core Components
-
+```
 | Component              | Role                                           |
 |------------------------|-----------------------------------------------|
 | **Request Router**     | Routes to appropriate backend                 |
@@ -47,11 +47,11 @@ Client → API Gateway → Auth Service
 | **Caching Layer**      | Stores frequent responses                     |
 | **Transformation Layer**| Request/response shaping (e.g., JSON → XML)  |
 | **Logging & Analytics**| Centralized observability                     |
-
+```
 ---
 
 ## 🧰 4. API Gateway vs Load Balancer
-
+```
 | Feature               | API Gateway                        | Load Balancer               |
 |------------------------|------------------------------------|-----------------------------|
 | Layer                 | Application layer (L7)              | Transport layer (L4/L7)     |
@@ -59,7 +59,7 @@ Client → API Gateway → Auth Service
 | Auth, Throttling      | Built-in                            | Not available (unless L7)   |
 | Protocol Translation  | Yes (REST ↔ gRPC, etc.)             | No                          |
 | Routing Logic         | Fine-grained (method/path/service) | IP/port-based               |
-
+```
 ---
 
 ## 🧪 5. API Gateway Patterns
@@ -122,7 +122,7 @@ Client ───────▶│ API Gateway   │────▶ Auth Service
 ---
 
 ## 🧱 7. Real-World Gateways
-
+```
 | Tool/Platform       | Features                                             |
 |---------------------|------------------------------------------------------|
 | **Kong**            | Open source, plugin-based, Lua core                  |
@@ -131,11 +131,11 @@ Client ───────▶│ API Gateway   │────▶ Auth Service
 | **AWS API Gateway** | Fully managed, integrates with Lambda, IAM, etc.     |
 | **Istio Ingress Gateway** | Part of service mesh, tightly integrated with Envoy |
 | **Zuul (Netflix)**  | Java-based, Spring Cloud integrated                  |
-
+```
 ---
 
 ## 🧠 8. Common Design Considerations
-
+```
 | Concern                  | Solution / Notes                              |
 |--------------------------|-----------------------------------------------|
 | Latency                 | Add caching, keep transformations minimal      |
@@ -143,7 +143,7 @@ Client ───────▶│ API Gateway   │────▶ Auth Service
 | Scaling                 | Use stateless design, autoscale pods           |
 | Auth overhead           | Use opaque token + caching                     |
 | Rate limiting           | Global counters in Redis or in-memory          |
-
+```
 ---
 
 ## 🧪 9. Example: Kong Gateway Rate Limiting Plugin (Declarative Config)
@@ -159,7 +159,7 @@ plugins:
 ---
 
 ## ✅ 10. Summary
-
+```
 | Feature             | Why It Matters                                 |
 |---------------------|-------------------------------------------------|
 | Entry point         | One place to manage all API traffic             |
@@ -167,7 +167,7 @@ plugins:
 | Decoupled services  | Clients stay unaware of backend complexity      |
 | Scalable            | Stateless, horizontally scalable                |
 | Flexible            | Works across REST, GraphQL, gRPC, WebSockets   |
-
+```
 ---
 
 ## 📚 Further Reading

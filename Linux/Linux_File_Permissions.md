@@ -27,23 +27,23 @@ sudo chmod [permissions] filename
 
 --- 
 ## Cheat Sheet: Permission Codes
-
+```
 | Permission | Numeric | Symbolic | Meaning              |
 |------------|---------|----------|----------------------|
 | `r`        | 4       | `r`      | Read                |
 | `w`        | 2       | `w`      | Write               |
 | `x`        | 1       | `x`      | Execute             |
 | `-`        | 0       | `-`      | No permission       |
-
+```
 ### Common Permission Values
-
+```
 | Numeric Code | Symbol      | Permissions for `user`, `group`, `others`                |
 |--------------|-------------|----------------------------------------------------------|
 | `777`        | `rwxrwxrwx` | Read, write, and execute for all                         |
 | `755`        | `rwxr-xr-x` | Full for user, read/execute for group and others         |
 | `644`        | `rw-r--r--` | Read/write for user, read for group and others           |
 | `700`        | `rwx------` | Full for user, none for group and others                 |
-
+```
 ---
 ## Examples
 - Change File Permissions to `644`:

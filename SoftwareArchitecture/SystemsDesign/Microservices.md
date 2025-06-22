@@ -13,13 +13,14 @@ Microservices are:
 - Organized around **business capabilities**
 
 ### Contrast with Monolith:
+```
 | Aspect        | Monolith                                | Microservices                           |
 |---------------|------------------------------------------|------------------------------------------|
 | Codebase      | Single, shared                           | Multiple, isolated                       |
 | Deployment    | One unit                                 | Many independent services                |
 | Scaling       | Whole app                                | Per service                              |
 | Team structure| Centralized                              | Small, cross-functional teams            |
-
+```
 ---
 
 ## 🧱 2. Key Characteristics
@@ -80,37 +81,37 @@ emit("order.created", { orderId: 123, userId: 9 })
 ## 🔐 5. Data Isolation and Consistency
 
 Each service should **own its data** (no shared DBs).
-
+```
 | Pattern         | Description                                       |
 |------------------|--------------------------------------------------|
 | **Database per service** | Prevents tight coupling                    |
 | **Event sourcing**       | Services react to published events        |
 | **CQRS**                 | Separate read/write models for scalability |
-
+```
 ---
 
 ## 🔁 6. Service Discovery
 
 Services need to find each other dynamically.
-
+```
 | Solution         | Description                                     |
 |------------------|-------------------------------------------------|
 | **DNS-based**    | Use cloud-native service names                  |
 | **Consul/Etcd**  | Key-value-based service registry                |
 | **Eureka**       | Netflix OSS registry                            |
 | **Kubernetes**   | Built-in DNS and service routing                |
-
+```
 ---
 
 ## ⚠️ 7. Challenges of Microservices
-
+```
 | Challenge                | Description                                 |
 |--------------------------|---------------------------------------------|
 | **Complexity**           | More moving parts, harder to debug          |
 | **Distributed tracing**  | Hard to track a request across services     |
 | **Data consistency**     | No global transactions (eventual only)      |
 | **Operational overhead** | Many services to monitor, deploy, log       |
-
+```
 ---
 
 ## 🧠 8. Strategies for Reliability
@@ -124,7 +125,7 @@ Services need to find each other dynamically.
 ---
 
 ## 🧰 9. Tools and Technologies
-
+```
 | Concern          | Common Tools                                    |
 |------------------|--------------------------------------------------|
 | API Gateway      | Kong, NGINX, AWS API Gateway, Envoy              |
@@ -133,11 +134,11 @@ Services need to find each other dynamically.
 | CI/CD            | GitHub Actions, ArgoCD, Jenkins                  |
 | Monitoring       | Prometheus, Grafana, Jaeger (for tracing)        |
 | Deployment       | Kubernetes, Docker Swarm, ECS                    |
-
+```
 ---
 
 ## ✅ 10. Summary
-
+```
 | Property              | Why It Matters                                |
 |------------------------|------------------------------------------------|
 | Independent Services   | Enables agility and parallel team delivery     |
@@ -145,7 +146,7 @@ Services need to find each other dynamically.
 | Smart endpoints, dumb pipes | Keeps logic where it belongs             |
 | Scaling Granularity    | Scale only the parts under pressure           |
 | Deployment Flexibility | Enables CI/CD at service level                |
-
+```
 ---
 
 ## 📚 Further Reading
@@ -154,6 +155,5 @@ Services need to find each other dynamically.
 - [Building Microservices (Book)](https://www.oreilly.com/library/view/building-microservices-2nd/9781492034018/)
 - [12 Factor App Principles](https://12factor.net)
 - [Istio Service Mesh](https://istio.io/)
-- [Domain Driven Design](https://dddcommunity.org/)
 
 ---

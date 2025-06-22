@@ -1,13 +1,13 @@
-# File Management in Linux: `cp`, `mv`, `rm`, `touch`, and `ln`
+# File Management in Linux: cp, mv, rm, touch, and ln
 
 This guide covers essential commands for managing files and directories in Linux. These commands help you copy, move, remove, create, and link files effectively.
 
 ---
 
-## **1. `cp` - Copy Files and Directories**
+## **1. cp - Copy Files and Directories**
 
 ### Description:
-The `cp` command copies files or directories from one location to another.
+The cp command copies files or directories from one location to another.
 
 ### Syntax:
 ```bash
@@ -32,7 +32,7 @@ cp -r folder/ backup/
 ```bash
 cp -i file.txt backup/
 ```
-## 2. `mv` - Move or Rename Files
+## 2. mv - Move or Rename Files
 ### Description:
 The `mv` command moves files or directories to a new location or renames them.
 
@@ -58,7 +58,7 @@ mv file.txt backup/
 ```bash
 mv -i file.txt folder/
 ```
-## 3. `rm` - Remove Files and Directories
+## 3. rm - Remove Files and Directories
 ### Description:
 The `rm` command deletes files or directories.
 
@@ -85,7 +85,7 @@ rm -r folder/
 ```bash
 rm -rf folder/
 ```
-## 4. `touch` - Create or Update Files
+## 4. touch - Create or Update Files
 ### Description:
 The `touch` command creates an empty file or updates the timestamp of an existing file.
 
@@ -109,7 +109,7 @@ touch newfile.txt
 touch existingfile.txt
 ```
 
-## 5. `ln` - Create Links
+## 5. ln - Create Links
 ### Description:
 The `ln` command creates links between files. Links can be hard or symbolic (soft).
 
@@ -137,7 +137,7 @@ ln -f original.txt newlink.txt
 ```
 ---
 ### File Management Cheatsheet
-
+```
 | Command                  | Description                                            | Example                                       |
 |--------------------------|--------------------------------------------------------|-----------------------------------------------|
 | `cp source target`       | Copy a file to a new location                          | `cp file.txt backup/`                         |
@@ -156,3 +156,4 @@ ln -f original.txt newlink.txt
 | `ln target link_name`    | Create a hard link                                     | `ln original.txt hardlink.txt`                |
 | `ln -s target link_name` | Create a symbolic (soft) link                         | `ln -s /path/to/original.txt symlink.txt`     |
 | `ln -f target link_name` | Force overwrite an existing link                      | `ln -f original.txt hardlink.txt`             |
+```

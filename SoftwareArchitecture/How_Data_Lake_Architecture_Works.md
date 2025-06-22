@@ -19,7 +19,7 @@ A **Data Lake**:
 - Is schema-on-read: schema is applied when you query
 
 Compare to a **Data Warehouse**:
-
+```
 | Feature               | Data Lake                      | Data Warehouse                   |
 |-----------------------|---------------------------------|----------------------------------|
 | Data Types            | Structured + semi/unstructured | Mostly structured                |
@@ -27,7 +27,7 @@ Compare to a **Data Warehouse**:
 | Storage               | Cheap object storage           | Columnar formats (Parquet, etc.) |
 | Query Performance     | Slower                         | Fast OLAP                        |
 | Use Cases             | ML, raw logs, staging           | BI, dashboards, reporting        |
-
+```
 ---
 
 ## 2. 🧱 Data Lake Architecture: Key Layers
@@ -54,14 +54,14 @@ Stores all raw and processed data in cheap, scalable storage (e.g. object store)
 
 - Examples: Amazon S3, Azure Data Lake Storage, Hadoop HDFS
 - Usually organized in **zones**:
-
+```
 | Zone        | Description                       |
 |-------------|-----------------------------------|
 | Raw         | Original, untransformed data      |
 | Staging     | Cleaned but not validated         |
 | Curated     | Validated, enriched, trusted      |
 | Sandbox     | Ad-hoc, temporary explorations    |
-
+```
 ---
 
 ### 3️⃣ **Processing Layer**
@@ -96,7 +96,7 @@ SELECT COUNT(*) FROM curated.sales WHERE region = 'EU';
 ## 3. 🗃️ Storage Formats & Metadata
 
 Data lakes use open formats:
-
+```
 | Format     | Type         | Notes                        |
 |------------|--------------|------------------------------|
 | CSV/JSON   | Text         | Simple, not efficient        |
@@ -104,19 +104,19 @@ Data lakes use open formats:
 | Avro       | Row-based    | Good for streaming           |
 | Delta Lake | Transactional| Adds ACID to data lakes      |
 | Iceberg    | Transactional| Schema evolution + versioning|
-
+```
 Also: Catalog systems like **Apache Hive Metastore** or **AWS Glue Catalog** manage table schemas and partitions.
 
 ---
 
 ## 4. 🚢 ETL vs ELT in Data Lakes
-
+```
 | ETL                              | ELT                               |
 |----------------------------------|------------------------------------|
 | Transform data **before** loading | Load raw data, **transform later** |
 | Used in warehouses                | Preferred in data lakes            |
 | Slower ingestion                  | Faster ingestion, lazy transforms  |
-
+```
 Data Lakes favor **ELT** to keep ingest simple and defer transformation to query time.
 
 ---
@@ -148,14 +148,14 @@ GROUP BY region;
 ---
 
 ## 7. ⚠️ Challenges & Pitfalls
-
+```
 | Challenge                 | Mitigation Strategy                        |
 |---------------------------|--------------------------------------------|
 | Data swamp (unorganized)  | Enforce naming, folder structure, catalog  |
 | Performance on large reads| Use columnar formats, partitioning         |
 | Lack of ACID              | Use Delta Lake / Apache Iceberg            |
 | Access control complexity | Centralize IAM policies, use lakehouse     |
-
+```
 ---
 
 ## 8. 🔄 Lakehouse: The Evolution
@@ -171,7 +171,6 @@ GROUP BY region;
 ## 📚 Further Reading
 
 - [AWS Data Lake Architecture](https://aws.amazon.com/big-data/datalakes-and-analytics/)
-- [Databricks: What Is a Lakehouse?](https://www.databricks.com/discover/lakehouse)
 - [Apache Iceberg](https://iceberg.apache.org/)
 - [Delta Lake](https://delta.io/)
 - [Trino (formerly Presto)](https://trino.io/)

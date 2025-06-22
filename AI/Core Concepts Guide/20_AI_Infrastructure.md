@@ -5,7 +5,7 @@
 ---
 
 ## 1. Why AI Infrastructure Matters
-
+```
 | Need                    | Infrastructure Role                                      |
 |-------------------------|----------------------------------------------------------|
 | Model Training          | Access to GPUs/TPUs, data pipelines                      |
@@ -14,7 +14,7 @@
 | Monitoring              | Logging, performance metrics, alerts                     |
 | Scalability             | Deploying across distributed environments                |
 | Cost Optimization       | Resource auto-scaling, serverless inference              |
-
+```
 ---
 
 ## 2. Core Components of AI Infrastructure
@@ -138,14 +138,14 @@ git commit -m "Track model with DVC"
 ---
 
 ## 3. Scalable Inference Patterns
-
+```
 | Pattern               | Description                                  |
 |------------------------|----------------------------------------------|
 | **Batch Inference**    | Run predictions on many records at once      |
 | **Online Inference**   | Serve individual predictions via API         |
 | **Serverless Inference** | Scales to zero, cheaper                     |
 | **Streaming**          | Predict from live data (Kafka, Flink)        |
-
+```
 ---
 
 ## 4. Security and Compliance
@@ -158,7 +158,7 @@ git commit -m "Track model with DVC"
 ---
 
 ## 5. Tools by Category
-
+```
 | Category               | Tools                                             |
 |------------------------|---------------------------------------------------|
 | Training               | PyTorch, TensorFlow, JAX, Hugging Face            |
@@ -167,7 +167,7 @@ git commit -m "Track model with DVC"
 | Monitoring             | Prometheus, Grafana, Arize, WhyLabs               |
 | Experiment Tracking    | Weights & Biases, Neptune, MLflow                 |
 | Vector DBs             | FAISS, Pinecone, Weaviate, Qdrant                 |
-
+```
 ---
 
 ## 6. Infrastructure-as-Code Example (Terraform for GCP AI Platform)
@@ -188,6 +188,5 @@ resource "google_ai_platform_model" "example" {
 - [ML Engineering Guide by Goku Mohandas](https://madewithml.com/)
 - [Serving LLMs in Production (AnyScale)](https://www.anyscale.com/blog/llm-serving)
 - [Google Vertex AI](https://cloud.google.com/vertex-ai)
-- [Hugging Face Infinity + Text Generation Inference](https://huggingface.co/docs/infinity/index)
 
 ---

@@ -40,7 +40,7 @@ By blending product development and SRE principles, organizations aim to achieve
 ### **Comparison of Approaches to Manage Operational Concerns in Software Engineering**
 
 Managing operational concerns in software engineering varies significantly depending on the team's size, maturity, and culture. Below is a comparison of the most common approaches:
-
+```
 | **Approach**                 | **Description**                                                                                 | **Advantages**                                                   | **Disadvantages**                                              | **Best For**                                      |
 |------------------------------|-------------------------------------------------------------------------------------------------|------------------------------------------------------------------|---------------------------------------------------------------|---------------------------------------------------|
 | **Traditional Operations Team** | A separate operations team handles all deployment, monitoring, and incident management tasks. | - Clear division of responsibilities<br>- Operations expertise   | - Siloed communication<br>- Slower deployments<br>- Less developer accountability | Large organizations with legacy systems          |
@@ -48,7 +48,7 @@ Managing operational concerns in software engineering varies significantly depen
 | **SRE (Dedicated Team)**     | A specialized team applies SRE principles to manage system reliability and automate operations. | - Strong reliability focus<br>- Expertise in automation<br>- Reduces toil | - Can create a new silo<br>- Requires investment in SRE roles and tools | Companies with complex, high-scale systems       |
 | **Integrated SRE/Dev Teams** | Product teams adopt SRE practices and handle their system's operational concerns.             | - Increased accountability<br>- Faster issue resolution<br>- Seamless feedback | - Higher cognitive load on developers<br>- Requires training and mindset shift | Small-to-medium teams with modern infrastructure |
 | **"You Build It, You Run It"** | Developers own end-to-end responsibility for their services, including operations and on-call duties. | - Maximum ownership<br>- Clear accountability<br>- Faster iteration | - Burnout risk<br>- Requires robust tooling and culture<br>- Not scalable for complex systems | Startups or small teams                          |
-
+```
 ---
 
 #### **Key Factors to Consider**
@@ -60,14 +60,14 @@ Managing operational concerns in software engineering varies significantly depen
 5. **Business Needs:** Fast-paced environments prioritize speed, while mission-critical systems prioritize reliability.
 
 #### **Recommendations by Context**
-
+```
 | **Context**                       | **Recommended Approach**                                |
 |-----------------------------------|--------------------------------------------------------|
 | Startup with small, nimble teams  | "You Build It, You Run It" or DevOps                   |
 | Mid-sized company scaling up      | DevOps with elements of SRE                            |
 | Enterprise with legacy systems    | Traditional Ops transitioning to DevOps or SRE         |
 | Large-scale, high-availability system | Dedicated SRE team with close collaboration to Dev teams |
-
+```
 Selecting the right model involves balancing operational needs with team capabilities, ensuring long-term sustainability and business alignment.
 
 # Key Concepts in SRE
@@ -915,13 +915,14 @@ Monitoring must answer:
 - **Why is it broken?** (Cause)
 
 ### Examples
+```
 | **Symptom**                            | **Cause**                                              |
 |----------------------------------------|-------------------------------------------------------|
 | HTTP 500s or 404s                      | Database servers refusing connections.               |
 | Slow responses                         | Overloaded CPUs or partial network packet loss.      |
 | Users in Antarctica not receiving GIFs | CDN blacklisted client IPs.                          |
 | Private content is world-readable      | Software push forgot ACLs.                           |
-
+```
 ### Importance of "What" vs. "Why"
 - A **good monitoring system** makes clear distinctions between symptoms and causes to reduce noise.
 - Example:
@@ -931,13 +932,14 @@ Monitoring must answer:
 ---
 
 ## Black-Box vs. White-Box Monitoring
+```
 | **Aspect**           | **Black-Box Monitoring**                     | **White-Box Monitoring**                |
 |-----------------------|---------------------------------------------|-----------------------------------------|
 | **Focus**            | Symptoms                                    | Causes and internal system insights     |
 | **Use Case**         | Detects current problems.                   | Identifies imminent issues and root causes. |
 | **Telemetry**        | Minimal insight into internals.             | Inspects logs, metrics, or endpoints.   |
 | **Discipline**       | Pages for ongoing and real problems only.   | Helps distinguish between symptoms and deeper issues. |
-
+```
 ---
 
 ## Practical Considerations
@@ -2268,6 +2270,7 @@ When dealing with different software versions (older and newer), there are three
 
 ---
 # Glossary
+```
 | Term                        | Definition                                                                 |
 |-----------------------------|---------------------------------------------------------------------------|
 | **Availability**             | The proportion of time a system is operational and accessible.            |
@@ -2305,3 +2308,4 @@ When dealing with different software versions (older and newer), there are three
 | **Service Mesh**             | A dedicated infrastructure layer that handles service-to-service communication in a microservices architecture. |
 | **Microservices**            | A design pattern in which an application is broken down into smaller, independent services that can be deployed and scaled independently. |
 | **Auto-scaling**             | The process of automatically adjusting the number of active servers or resources in response to traffic or load. |
+```

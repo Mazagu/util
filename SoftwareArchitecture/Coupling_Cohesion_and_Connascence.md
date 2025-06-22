@@ -13,7 +13,7 @@ In software design, understanding how parts of a system depend on and relate to 
 **Coupling** is the degree of **interdependence** between modules or components.
 
 ### Types of Coupling (from worst to best):
-
+```
 | Type             | Description                                      |
 |------------------|--------------------------------------------------|
 | Content Coupling | One module directly accesses internal data of another |
@@ -22,7 +22,7 @@ In software design, understanding how parts of a system depend on and relate to 
 | Stamp Coupling   | Modules share only part of a data structure      |
 | Data Coupling    | Modules communicate by passing only needed data  |
 | Message Coupling | Modules interact only via well-defined messages  |
-
+```
 ### 🔴 Example: Tight Coupling
 
 ```
@@ -53,7 +53,7 @@ interface Order {
 **Cohesion** measures how **functionally related** the responsibilities of a single module are.
 
 ### Types of Cohesion (from worst to best):
-
+```
 | Type               | Description                                 |
 |--------------------|---------------------------------------------|
 | Coincidental       | Unrelated tasks grouped together            |
@@ -62,7 +62,7 @@ interface Order {
 | Procedural         | Ordered steps grouped together              |
 | Communicational    | Functions operate on same data              |
 | Functional         | All operations contribute to one goal       |
-
+```
 ### 🔴 Low Cohesion Example
 
 ```
@@ -92,7 +92,7 @@ class InvoiceService {
 Introduced by Meilir Page-Jones, it breaks down interdependency into **types** and **strengths**.
 
 ### 📊 Categories of Connascence
-
+```
 | Type                 | Meaning                                            | Example                                 |
 |----------------------|----------------------------------------------------|-----------------------------------------|
 | Name                 | Agree on names                                     | Method parameters, variable names       |
@@ -102,7 +102,7 @@ Introduced by Meilir Page-Jones, it breaks down interdependency into **types** a
 | Algorithm            | Modules rely on the same algorithm                 | Hashing, compression                    |
 | Execution            | Must run in specific order                         | Init → Validate → Process               |
 | Timing               | Must happen within time bounds                     | Race conditions, timeout logic          |
-
+```
 ### 🔴 High Connascence Example
 
 ```
@@ -123,30 +123,29 @@ void createUser(UserInput input);
 ---
 
 ## ⚖️ Comparison Summary
-
+```
 | Concept      | Definition                                      | Ideal Direction                  |
 |--------------|--------------------------------------------------|----------------------------------|
 | Coupling     | Degree of interdependence between modules        | Lower                            |
 | Cohesion     | Degree of internal relatedness within a module   | Higher                           |
 | Connascence  | How tightly two parts must change together       | Reduce strength, increase locality |
-
+```
 ---
 
 ## 🧪 When to Refactor
-
+```
 | Smell                       | What It Means                            | What to Do                       |
 |-----------------------------|-------------------------------------------|----------------------------------|
 | Changing one module breaks many others | High coupling                     | Introduce interfaces, decouple  |
 | Class does too many unrelated things   | Low cohesion                      | Split into cohesive components  |
 | A small change affects distant modules | High connascence, low locality    | Encapsulate and reduce reach    |
-
+```
 ---
 
 ## 📚 Further Reading
 
 - [Connascence (connascence.io)](https://connascence.io/)
 - [Clean Architecture – Uncle Bob](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html)
-- [High Cohesion and Low Coupling (Fowler)](https://martinfowler.com/bliki/HighCohesion.html)
-- [Coupling vs Cohesion (Grady Booch)](https://www.youtube.com/watch?v=Z-5yALNsi-g)
+- [Layering Principles (Fowler)](https://martinfowler.com/bliki/LayeringPrinciples.html)
 
 ---

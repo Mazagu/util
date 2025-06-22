@@ -113,7 +113,6 @@ model.fit(X)
 ### 📚 Further Resources
 - [StatQuest on Regression & Classification](https://www.youtube.com/user/joshstarmer)
 - [Scikit-learn User Guide](https://scikit-learn.org/stable/user_guide.html)
-- [Clustering in ML by Stanford](https://web.stanford.edu/class/cs345a/slides/08-clustering.pdf)
 
 ---
 
@@ -212,4 +211,3 @@ print("R2:", r2_score(y_test, y_pred))
 
 ### 📚 Further Resources
 - [Scikit-learn: Model Evaluation Guide](https://scikit-learn.org/stable/modules/model_evaluation.html)
-- [K-fold CV Explained (towardsdatascience)](https://towardsdatascience.com/cross-validation-explained-evaluating-estimator-performance-e51e5430ff1e)
