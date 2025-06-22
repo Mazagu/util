@@ -84,14 +84,14 @@ recordValueWithExpectedInterval(actual_latency_ms, expected_interval_ms)
 > “**P99 latency** tells you what your worst users experience.”
 
 ### ✅ Key Metrics
-```
+
 | Metric      | Why It Matters                          |
 |-------------|------------------------------------------|
 | Avg latency | Misleading in non-normal distributions   |
 | P95 / P99   | Critical for SLAs, SLOs                  |
 | Max latency | Surface worst-case stalls                |
 | Std. Dev    | Variability across requests              |
-```
+
 ```
 # Example: Wrapping a test with latency histogram
 import hdrhistogram
@@ -159,7 +159,7 @@ Use tools like:
 - Client: wrk, 4 threads, 100 connections
 
 ## Results
-```
+
 | Metric    | Value      |
 |-----------|------------|
 | Avg Lat   | 5.2 ms     |
@@ -167,7 +167,7 @@ Use tools like:
 | P99       | 21.7 ms    |
 | Max       | 65.0 ms    |
 | Throughput| 12,700 RPS |
-```
+
 ## Observations
 - P99 spikes during connection churn
 - IOWait correlates with spikes on write-heavy phases

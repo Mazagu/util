@@ -111,7 +111,7 @@ Retrieval-Augmented Generation (RAG) combines powerful Large Language Models (LL
 ---
 
 # Summary
-```
+
 | Component             | Purpose                                   | Examples                                         |
 |-----------------------|-------------------------------------------|-------------------------------------------------|
 | Large Language Models  | Understanding & generating responses      | GPT, Llama, Claude, Gemini, Mistral              |
@@ -119,5 +119,5 @@ Retrieval-Augmented Generation (RAG) combines powerful Large Language Models (LL
 | Databases             | Storing & retrieving vectors/data          | FAISS, Milvus, pgVector, Weaviate, Pinecone, Chroma, Postgres     |
 | Data Extraction       | Structured info from unstructured sources  | Llamaparse, Docking, Megaparser, Firecrawl, ScrapeGraph AI, Document AI, Claude API |
 | Text Embeddings       | Convert text to semantic vectors            | OpenAI Embeddings, Nomic, Cognita, Gemini, Cohere, JinaAI, Ollama |
-```
+
 ---

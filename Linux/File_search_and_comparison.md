@@ -9,7 +9,6 @@ The `find` command is used to search for files and directories in a directory hi
 find [path] [expression]
 ```
 #### Options
-```
 | Option           | Description                                                        | Example                                  |
 |------------------|--------------------------------------------------------------------|------------------------------------------|
 | `-name [pattern]`| Search for files matching the pattern (case-sensitive)              | `find . -name "*.txt"`                   |
@@ -28,7 +27,7 @@ find [path] [expression]
 | `-empty`         | Search for empty files or directories                              | `find . -empty`                          |
 | `-maxdepth [n]`  | Limit the search to `n` levels of directories                      | `find . -maxdepth 2 -name "*.txt"`       |
 | `-mindepth [n]`  | Limit the search to files at least `n` levels deep                 | `find . -mindepth 2 -name "*.txt"`       |
-```
+
 #### Examples:
 
 - Find all files in the current directory:
@@ -56,7 +55,6 @@ The `locate` command uses a pre-built index of files, making it faster than find
 locate [filename]
 ```
 #### Options
-```
 | Option           | Description                                                        | Example                                  |
 |------------------|--------------------------------------------------------------------|------------------------------------------|
 | `-i`             | Perform case-insensitive search                                    | `locate -i "*.txt"`                      |
@@ -68,7 +66,6 @@ locate [filename]
 | `-S [number]`    | Show the size of each file found                                    | `locate -S "*.txt"`                      |
 | `--help`         | Show help information about `locate` command                        | `locate --help`                          |
 | `--version`      | Display the version of `locate`                                     | `locate --version`                       |
-```
 
 #### Example:
 
@@ -91,13 +88,12 @@ The `which` command shows the path of the executable that would have been execut
 which [command]
 ```
 #### Options
-```
 | Option           | Description                                                        | Example                                  |
 |------------------|--------------------------------------------------------------------|------------------------------------------|
 | `-a`             | Show all matches of the command (not just the first one found)     | `which -a python`                        |
 | `--version`      | Display the version of the `which` command                         | `which --version`                        |
 | `-h`             | Show help information                                              | `which -h`                               |
-```
+
 #### Example:
  
 - Find the path to the python3 executable:
@@ -114,7 +110,6 @@ The `grep` command searches for patterns inside files. It's one of the most comm
 grep [options] "pattern" [file]
 ```
 #### Options
-```
 | Option           | Description                                                        | Example                                  |
 |------------------|--------------------------------------------------------------------|------------------------------------------|
 | `-i`             | Perform a case-insensitive search                                  | `grep -i "pattern" file.txt`             |
@@ -133,7 +128,7 @@ grep [options] "pattern" [file]
 | `--color`        | Highlight matching text in color                                   | `grep --color "pattern" file.txt`        |
 | `-w`             | Match the whole word                                              | `grep -w "pattern" file.txt`             |
 | `-x`             | Match the whole line                                               | `grep -x "pattern" file.txt`             |
-```
+
 #### Examples:
 
 - Search for the word error in a file:
@@ -166,7 +161,6 @@ grep -c "error" logfile.txt
 ack [pattern] [path]
 ```
 #### Options
-```
 | Option           | Description                                                        | Example                                  |
 |------------------|--------------------------------------------------------------------|------------------------------------------|
 | `-i`             | Perform a case-insensitive search                                  | `ack -i "pattern"`                       |
@@ -184,7 +178,7 @@ ack [pattern] [path]
 | `--no-filename`  | Suppress filename in the output when searching multiple files     | `ack --no-filename "pattern"`            |
 | `--color`        | Highlight matching text in color                                   | `ack --color "pattern"`                  |
 | `--max-count`    | Limit the number of matching lines displayed                       | `ack --max-count=5 "pattern"`            |
-```
+
 #### Example:
 
 - Search for function in all .js files:
@@ -200,7 +194,6 @@ ack "function" --js
 ag [pattern] [path]
 ```
 #### Options
-```
 | Option           | Description                                                        | Example                                  |
 |------------------|--------------------------------------------------------------------|------------------------------------------|
 | `-i`             | Perform a case-insensitive search                                  | `ag -i "pattern"`                        |
@@ -221,7 +214,7 @@ ag [pattern] [path]
 | `--color`        | Highlight matching text in color                                   | `ag --color "pattern"`                   |
 | `--stats`        | Display statistics on the search results (e.g., number of matches) | `ag --stats "pattern"`                   |
 | `--max-count`    | Limit the number of matching lines displayed                       | `ag --max-count=5 "pattern"`             |
-```
+
 #### Example:
 
 - Search for TODO in the current directory:
@@ -237,7 +230,6 @@ ag "TODO"
 sed -n '/pattern/p' [file]
 ```
 #### Options
-```
 | Option           | Description                                                        | Example                                  |
 |------------------|--------------------------------------------------------------------|------------------------------------------|
 | `-e`             | Allows you to add multiple expressions                             | `sed -e 's/old/new/g' file.txt`          |
@@ -251,7 +243,7 @@ sed -n '/pattern/p' [file]
 | `-i[SUFFIX]`     | Edit the file in-place and create a backup with the given suffix  | `sed -i.bak 's/old/new/g' file.txt`      |
 | `-g`             | Apply the substitution to all occurrences in the line (default is the first match) | `sed 's/old/new/g' file.txt`     |
 | `-l[width]`      | Specify the line length when printing with `-n` option             | `sed -l 80 's/old/new/' file.txt`        |
-```
+
 #### Example:
 
 - Print lines containing error in the file:
@@ -268,7 +260,6 @@ The `diff` command compares files line by line and shows the differences between
 diff [file1] [file2]
 ```
 #### Options
-```
 | Option           | Description                                                        | Example                                  |
 |------------------|--------------------------------------------------------------------|------------------------------------------|
 | `-u`             | Unified format (shows a few lines of context around the differences) | `diff -u file1.txt file2.txt`            |
@@ -284,7 +275,7 @@ diff [file1] [file2]
 | `-u [num]`       | Limit the number of lines of context shown                         | `diff -u 3 file1.txt file2.txt`          |
 | `-p`             | Show which C function a change occurred in (useful for code)       | `diff -p file1.c file2.c`                |
 | `--side-by-side` | Display output in two columns for easier comparison                | `diff --side-by-side file1.txt file2.txt` |
-```
+
 #### Examples:
 
 - Compare two text files:
@@ -308,7 +299,6 @@ The `cmp` command compares two files byte by byte.
 cmp [file1] [file2]
 ```
 #### Options
-```
 | Option           | Description                                                        | Example                                  |
 |------------------|--------------------------------------------------------------------|------------------------------------------|
 | `-l`             | Print byte and line numbers of all differing bytes                 | `cmp -l file1.txt file2.txt`             |
@@ -319,7 +309,7 @@ cmp [file1] [file2]
 | `-v`             | Invert the sense of the comparison (useful with `-l`)               | `cmp -v file1.txt file2.txt`             |
 | `--help`         | Display help information                                           | `cmp --help`                             |
 | `--version`      | Display version information                                        | `cmp --version`                          |
-```
+
 #### Example:
  
 - Compare two binary files:
@@ -335,7 +325,6 @@ The `comm` command compares two sorted files line by line and outputs the lines 
 comm [file1] [file2]
 ```
 #### Options
-```
 | Option           | Description                                                        | Example                                  |
 |------------------|--------------------------------------------------------------------|------------------------------------------|
 | `-1`             | Suppress lines unique to the first file                           | `comm -1 file1.txt file2.txt`            |
@@ -345,7 +334,7 @@ comm [file1] [file2]
 | `-u`             | Use unadorned output (suppress columns of output)                  | `comm -u file1.txt file2.txt`            |
 | `--help`         | Display help information                                           | `comm --help`                            |
 | `--version`      | Display version information                                        | `comm --version`                         |
-```
+
 #### Example:
 
 - Compare two sorted files and display common and unique lines:
@@ -368,7 +357,6 @@ sdiff file1.txt file2.txt
 ```
 ---
 # Summary of Key Commands
-```
 | Command | Description                                     | Example                                        |
 |---------|-------------------------------------------------|------------------------------------------------|
 | `find`  | Search for files and directories                | `find /home/user/ -name "*.txt"`               |
@@ -381,4 +369,3 @@ sdiff file1.txt file2.txt
 | `cmp`   | Compare files byte by byte                     | `cmp file1.bin file2.bin`                      |
 | `comm`  | Compare two sorted files                        | `comm file1.txt file2.txt`                     |
 | `sdiff` | Side-by-side comparison of files               | `sdiff file1.txt file2.txt`                    |
-```

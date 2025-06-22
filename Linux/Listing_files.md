@@ -18,7 +18,6 @@ ls /path/to/directory
 ```
 
 ### 2. Commonly Used Options
-```
 | Option  | Description                                    |
 |---------|------------------------------------------------|
 | `-a`    | Show all files, including hidden ones          |
@@ -29,7 +28,7 @@ ls /path/to/directory
 | `-S`    | Sort by size                                  |
 | `-R`    | Recursively list subdirectories               |
 | `-d`    | List directories themselves, not contents     |
-```
+
 ### 3. Combining Options
 * List all files (including hidden ones) in long format:
 
@@ -131,7 +130,6 @@ Apply the changes:
 source ~/.bashrc
 ```
 ### **Commonly Used ls Aliases**
-```
 | Alias       | Command                            | Description                                         |
 |-------------|------------------------------------|-----------------------------------------------------|
 | `ll`        | `alias ll='ls -alF'`               | Long listing format with file type symbols (`/`, `*`, etc.) |
@@ -143,11 +141,10 @@ source ~/.bashrc
 | `ld`        | `alias ld='ls -d */'`              | List directories only                              |
 | `lx`        | `alias lx='ls -lX'`                | List files sorted by extension                      |
 | `lq`        | `alias lq='ls -lQ'`                | List files with filenames enclosed in double quotes |
-```
+
 ---
 ## Cheat Sheet
 ### **Common Options**
-```
 | Option        | Description                                           | Example Usage                     |
 |---------------|-------------------------------------------------------|------------------------------------|
 | `-a`          | Show all files, including hidden files (those starting with `.`) | `ls -a`                           |
@@ -160,27 +157,24 @@ source ~/.bashrc
 | `-R`          | Recursively list subdirectories                       | `ls -R`                           |
 | `-d`          | List directories themselves, not their contents      | `ls -d */`                        |
 | `-1`          | List one file per line (useful for scripting)         | `ls -1`                           |
-```
+
 ### **Sorting Options**
-```
 | Option        | Description                                           | Example Usage                     |
 |---------------|-------------------------------------------------------|------------------------------------|
 | `-t`          | Sort by modification time (most recent first)         | `ls -lt`                          |
 | `-S`          | Sort by file size (largest first)                     | `ls -lS`                          |
 | `-X`          | Sort by extension                                    | `ls -lX`                          |
 | `-v`          | Sort by version (numerical sorting for version numbers) | `ls -lv`                          |
-```
+
 ### **Filtering Options**
-```
 | Option        | Description                                           | Example Usage                     |
 |---------------|-------------------------------------------------------|------------------------------------|
 | `--color=auto`| Enable colored output (auto-detects terminal)         | `ls --color=auto`                 |
 | `-I`          | Ignore files that match the given pattern             | `ls -I "*.bak"`                   |
 | `-f`          | Do not sort the output (immediate listing)            | `ls -f`                           |
 | `-Q`          | Enclose filenames in double quotes                    | `ls -Q`                           |
-```
+
 ### **Advanced Usage**
-```
 | Option        | Description                                           | Example Usage                     |
 |---------------|-------------------------------------------------------|------------------------------------|
 | `-L`          | Follow symbolic links and list the file they point to | `ls -lL`                          |
@@ -189,13 +183,11 @@ source ~/.bashrc
 | `-B`          | Exclude backup files (those ending with `~`)           | `ls -B`                           |
 | `-X`          | Sort files by extension                                | `ls -X`                           |
 | `--block-size=SIZE` | Set the block size used for file sizes (e.g., KB, MB) | `ls -lh --block-size=M`          |
-```
+
 ### **Using Wildcards with ls**
-```
 | Wildcard      | Description                                           | Example Usage                     |
 |---------------|-------------------------------------------------------|------------------------------------|
 | `*`           | Matches any string of characters                     | `ls *.txt`                        |
 | `?`           | Matches exactly one character                         | `ls file?.txt`                    |
 | `[]`          | Matches any single character inside the brackets      | `ls file[1-5].txt`                |
 | `!`           | Matches anything except the following pattern         | `ls !(file1|file2).txt`           |
-```

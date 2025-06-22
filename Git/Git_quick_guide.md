@@ -99,7 +99,7 @@ git log --oneline --graph --decorate --all
 ```
 
 # Git Cheatsheet
-```
+
 | Command                              | Description                              |
 |--------------------------------------|------------------------------------------|
 | `git config --global`                | Configure global username/email          |
@@ -120,6 +120,6 @@ git log --oneline --graph --decorate --all
 | `git reset --hard HEAD~1`            | Undo last commit and discard changes     |
 | `git log`                            | Show commit history                      |
 | `git log --oneline --graph --all`    | Show graphical commit history            |
-```
+
 --- 
 For more advanced Git commands, consult the [Git documentation](https://git-scm.com/doc).

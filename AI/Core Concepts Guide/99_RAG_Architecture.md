@@ -5,14 +5,14 @@
 ---
 
 ## 🧠 Why RAG?
-```
+
 | Problem with LLMs          | How RAG Helps                                     |
 |----------------------------|---------------------------------------------------|
 | Hallucinations             | Uses real documents as context                    |
 | Limited context window     | Retrieves only the most relevant pieces           |
 | Outdated knowledge         | Can pull in current, dynamic data sources         |
 | Inefficient fine-tuning    | Uses search instead of retraining the model       |
-```
+
 ---
 
 ## 🔁 High-Level RAG Flow
@@ -85,7 +85,7 @@ response = qa.run("Explain Retrieval-Augmented Generation")
 ---
 
 ## 🧱 RAG Stack Example
-```
+
 | Layer       | Tool Example                        |
 |-------------|-------------------------------------|
 | Embedding   | OpenAI, Cohere, SentenceTransformers |
@@ -93,7 +93,7 @@ response = qa.run("Explain Retrieval-Augmented Generation")
 | LLM         | GPT-4, LLaMA, Claude, Mistral       |
 | Framework   | LangChain, LlamaIndex, Haystack     |
 | Frontend    | Streamlit, Next.js, Gradio          |
-```
+
 ---
 
 ## 🔍 Use Cases
@@ -107,14 +107,14 @@ response = qa.run("Explain Retrieval-Augmented Generation")
 ---
 
 ## ⚠️ Challenges & Tips
-```
+
 | Challenge               | Solution                                                |
 |-------------------------|---------------------------------------------------------|
 | Bad retrieval results   | Improve chunking, embedding model, metadata filtering   |
 | Context too large       | Use summarization or reranking                          |
 | Slow retrieval          | Use pre-computed, indexed vector DB                     |
 | Privacy / access        | Add RBAC or hybrid RAG with permission-aware sources    |
-```
+
 ---
 
 ## 🧠 Advanced RAG Patterns

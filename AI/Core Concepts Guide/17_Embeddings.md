@@ -73,7 +73,7 @@ plt.show()
 ---
 
 ## 5. Use Cases of Embeddings
-```
+
 | Task                        | Description                                     |
 |-----------------------------|-------------------------------------------------|
 | **Semantic Search**         | Find similar docs/questions                    |
@@ -81,18 +81,18 @@ plt.show()
 | **Clustering/Topic Modeling** | Group similar items without supervision        |
 | **Text Classification**     | Use embeddings as features for ML models       |
 | **RAG (Retrieval-Augmented Generation)** | Combine vector search with LLMs       |
-```
+
 ---
 
 ## 6. Embedding Models (Text/Image/Audio)
-```
+
 | Type     | Examples                                  |
 |----------|-------------------------------------------|
 | Text     | `text-embedding-3-small`, `all-MiniLM-L6` |
 | Image    | CLIP, BLIP-2                              |
 | Audio    | Wav2Vec, Whisper embeddings               |
 | Multi    | Gemini, GPT-4o                            |
-```
+
 ---
 
 ## 7. Example: Sentence Similarity with SentenceTransformers

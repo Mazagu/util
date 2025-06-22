@@ -16,7 +16,7 @@ An AI Agent typically follows the **perception → decision → action** cycle.
 ---
 
 ## 2. Types of AI Agents
-```
+
 | Agent Type       | Description                                              |
 |------------------|----------------------------------------------------------|
 | Reactive Agent   | Responds to current input (no memory/learning)           |
@@ -24,7 +24,7 @@ An AI Agent typically follows the **perception → decision → action** cycle.
 | Goal-Based Agent | Chooses actions to achieve specific goals                |
 | Learning Agent   | Improves over time using data/experience                 |
 | Planning Agent   | Builds plans by simulating outcomes                      |
-```
+
 ---
 
 ## 3. Basic AI Agent Structure (Pseudocode)
@@ -40,14 +40,14 @@ while True:
 ---
 
 ## 4. AI Agents vs Standard Models
-```
+
 | Feature              | Standard ML Model           | AI Agent                        |
 |----------------------|-----------------------------|----------------------------------|
 | Passive or Active    | Passive (predict-only)       | Active (acts in environment)     |
 | One-shot inference   | Yes                          | No, typically multi-step         |
 | Learning approach    | Supervised, Unsupervised     | Often Reinforcement Learning     |
 | Autonomy             | Low                          | High                             |
-```
+
 ---
 
 ## 5. Example Use Cases

@@ -97,7 +97,6 @@ This **locality** and **stability** make consistent hashing ideal for dynamic sy
 ---
 
 ## 📦 6. Use Cases
-```
 | Use Case                | Why Consistent Hashing Helps                |
 |-------------------------|---------------------------------------------|
 | Distributed Caching     | Prevents cache misses on node changes       |
@@ -105,11 +104,10 @@ This **locality** and **stability** make consistent hashing ideal for dynamic sy
 | Load Balancing          | Assigns client requests to backend servers  |
 | Partitioned Logs        | Distributes partitions across brokers       |
 | Distributed File Stores | Maps files to storage servers efficiently   |
-```
+
 ---
 
 ## ⚙️ 7. Real-World Systems That Use It
-```
 | System         | Use of Consistent Hashing             |
 |----------------|----------------------------------------|
 | **Amazon Dynamo** | Ring-based partitioning, VNodes         |
@@ -118,18 +116,17 @@ This **locality** and **stability** make consistent hashing ideal for dynamic sy
 | **Memcached**     | Client-side hashing for cache routing  |
 | **Envoy Proxy**   | Uses it in load balancing algorithms   |
 | **Kafka**         | Custom partitioners based on hash ring |
-```
+
 ---
 
 ## ⚠️ 8. Pitfalls and Considerations
-```
 | Issue                  | Solution                           |
 |------------------------|------------------------------------|
 | Hash imbalance         | Use **VNodes** to smooth the ring  |
 | Hot keys (skew)        | Combine hashing + replication      |
 | Hash collisions        | Use strong, uniform hash function  |
 | Rebalancing complexity | Use libraries/tools (e.g. Ketama)  |
-```
+
 ---
 
 ## 🛠️ 9. Sample Implementation (Python-like Pseudocode)
@@ -157,7 +154,6 @@ class ConsistentHashRing:
 ---
 
 ## ✅ Summary
-```
 | Concept           | Description                                     |
 |-------------------|-------------------------------------------------|
 | Problem           | % N hashing remaps all keys on change           |
@@ -165,7 +161,7 @@ class ConsistentHashRing:
 | Benefit           | Only small subset of keys need to move          |
 | Advanced Feature  | Virtual nodes improve balance                   |
 | Real-World Use    | Dynamo, Cassandra, Kafka, Envoy, Memcached     |
-```
+
 ---
 
 ## 📚 Further Reading

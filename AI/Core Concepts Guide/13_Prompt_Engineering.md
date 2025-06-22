@@ -89,7 +89,7 @@ Prompt: "List three pros and cons of remote work. Format as a Markdown table."
 ---
 
 ## 4. Common Use Cases
-```
+
 | Use Case             | Prompt Example |
 |----------------------|----------------|
 | Text generation      | “Write a sci-fi story in 5 sentences” |
@@ -97,7 +97,7 @@ Prompt: "List three pros and cons of remote work. Format as a Markdown table."
 | Translation          | “Translate ‘Good night’ to German” |
 | Summarization        | “Summarize this email for a manager” |
 | Style Transfer       | “Rewrite this in a more formal tone” |
-```
+
 ---
 
 ## 5. Tips for Better Prompt Engineering

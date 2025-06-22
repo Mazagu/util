@@ -9,7 +9,6 @@ Linux provides several commands for creating, extracting, and managing compresse
 tar [options] [archive_file] [file(s)_to_archive]
 ```
 ### Common Options:
-```
 | Option    | Description                                             | Example                                                    |
 |-----------|---------------------------------------------------------|------------------------------------------------------------|
 | -c        | Create a new archive.                                   | `tar -cvf archive.tar /path/to/folder`                     |
@@ -25,7 +24,7 @@ tar [options] [archive_file] [file(s)_to_archive]
 | -C        | Extract or create an archive in a specific directory.   | `tar -xvf archive.tar -C /target/dir`                      |
 | -A        | Concatenate multiple archives.                          | `tar -Af archive1.tar archive2.tar`                        |
 | --exclude | Exclude files matching the pattern.                     | `tar -czf archive.tar.gz --exclude="*.log" /path/to/folder`|
-```
+
 ---
 ## zip - Create Zip Archives
 `zip` is used to compress files and directories into .zip archives.
@@ -35,7 +34,6 @@ tar [options] [archive_file] [file(s)_to_archive]
 zip [options] archive.zip file1.txt file2.txt
 ```
 ### Common Options:
-```
 | Option  | Description                                   | Example                                        |
 |---------|-----------------------------------------------|------------------------------------------------|
 | -r      | Recursively zip a directory.                  | `zip -r archive.zip /path/to/folder`           |
@@ -47,7 +45,7 @@ zip [options] archive.zip file1.txt file2.txt
 | -x      | Exclude files from the archive.               | `zip -r archive.zip /path/to/folder -x "*.log"`|
 | -u      | Update files in the archive.                  | `zip -u archive.zip updatedfile.txt`           |
 | -z      | Compress files that are already compressed.   | `zip -z archive.zip /path/to/folder`           |
-```
+
 ---
 ## unzip - Extract Zip Archives
 `unzip` is used to extract files from .zip archives.
@@ -74,7 +72,6 @@ unzip archive.zip
 gzip file.txt
 ```
 ### Common Options:
-```
 | Option  | Description                                                                 | Example                                  |
 |---------|-----------------------------------------------------------------------------|------------------------------------------|
 | -d      | Decompress a .gz file.                                                      | `gzip -d file.gz`                        |
@@ -83,7 +80,7 @@ gzip file.txt
 | -k      | Keep the original file after compression.                                   | `gzip -k file.txt`                       |
 | -v      | Verbose mode, show compression ratio.                                       | `gzip -v file.txt`                       |
 | -1 to -9 | Set compression level (1 = fastest, 9 = maximum compression).              | `gzip -9 file.txt`                       |
-```
+
 ---
 ## gunzip - Decompress Gzip Files
 `gunzip` is used to decompress .gz files.
@@ -93,14 +90,13 @@ gzip file.txt
 gunzip file.txt.gz
 ```
 ### Common options
-```
 | Option  | Description                                                                 | Example                                  |
 |---------|-----------------------------------------------------------------------------|------------------------------------------|
 | -d      | Decompress a .gz file.                                                      | `gunzip file.gz`                         |
 | -c      | Output to standard output without modifying the original file.              | `gunzip -c file.gz > file.txt`           |
 | -k      | Keep the original file after decompression.                                 | `gunzip -k file.gz`                      |
 | -v      | Verbose mode, show decompression details.                                   | `gunzip -v file.gz`                      |
-```
+
 ---
 ## bzip2 - Compress Files Using Bzip2
 `bzip2` is used to compress files using the .bz2 format. It typically offers better compression than gzip.
@@ -110,7 +106,6 @@ gunzip file.txt.gz
 bzip2 file.txt
 ```
 ### Common Options:
-```
 | Option  | Description                                                                 | Example                                  |
 |---------|-----------------------------------------------------------------------------|------------------------------------------|
 | -d      | Decompress a .bz2 file.                                                     | `bzip2 -d file.bz2`                      |
@@ -118,7 +113,7 @@ bzip2 file.txt
 | -z      | Compress the file (default action).                                         | `bzip2 file.txt`                         |
 | -v      | Verbose mode, show compression ratio.                                       | `bzip2 -v file.txt`                      |
 | -1 to -9 | Set compression level (1 = fastest, 9 = maximum compression).              | `bzip2 -9 file.txt`                      |
-```
+
 ---
 ## bunzip2 - Decompress Bzip2 Files
 `bunzip2` is used to decompress .bz2 files.
@@ -128,13 +123,12 @@ bzip2 file.txt
 bunzip2 file.txt.bz2
 ```
 ### Common Options
-```
 | Option  | Description                                                                 | Example                                  |
 |---------|-----------------------------------------------------------------------------|------------------------------------------|
 | -d      | Decompress a .bz2 file.                                                     | `bunzip2 file.bz2`                       |
 | -k      | Keep the original file after decompression.                                 | `bunzip2 -k file.bz2`                    |
 | -v      | Verbose mode, show decompression details.                                   | `bunzip2 -v file.bz2`                    |
-```
+
 ---
 ## xz - Compress Files Using Xz
 `xz` is a command-line tool used for compressing files using the .xz format, which provides high compression ratios.
@@ -144,7 +138,6 @@ bunzip2 file.txt.bz2
 xz file.txt
 ```
 ### Common Options:
-```
 | Option  | Description                                                                 | Example                                  |
 |---------|-----------------------------------------------------------------------------|------------------------------------------|
 | -d      | Decompress a .xz file.                                                      | `xz -d file.xz`                          |
@@ -152,7 +145,7 @@ xz file.txt
 | -z      | Compress the file (default action).                                         | `xz file.txt`                            |
 | -v      | Verbose mode, show compression ratio.                                       | `xz -v file.txt`                         |
 | -1 to -9 | Set compression level (1 = fastest, 9 = maximum compression).              | `xz -9 file.txt`                         |
-```
+
 ---
 ## 7z - Compress Files Using 7zip
 `7z` is a powerful compression tool used for creating .7z archives. It supports a wide range of compression formats.
@@ -162,7 +155,6 @@ xz file.txt
 7z a archive.7z file1.txt file2.txt
 ```
 ### Common Options:
-```
 | Option  | Description                                                                 | Example                                  |
 |---------|-----------------------------------------------------------------------------|------------------------------------------|
 | a       | Add files to the archive.                                                   | `7z a archive.7z /path/to/folder`        |
@@ -172,5 +164,5 @@ xz file.txt
 | -p      | Set the password for encrypted archives.                                    | `7z a -pPASSWORD archive.7z file.txt`    |
 | -y      | Assume "yes" to all queries (no confirmation).                              | `7z a -y archive.7z /path/to/folder`     |
 | -r      | Recursively add files in directories.                                       | `7z a -r archive.7z /path/to/folder`     |
-```
+
 ---

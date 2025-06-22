@@ -96,7 +96,6 @@ mkdir -m 755 new_directory
 ```
 
 ### **Directory Navigation Cheatsheet**
-```
 
 | Command            | Description                                            |
 |--------------------|--------------------------------------------------------|
@@ -110,4 +109,3 @@ mkdir -m 755 new_directory
 | `mkdir dir1 dir2`  | Create multiple directories                            |
 | `mkdir -p path`    | Create nested directories (parents if they don't exist)|
 | `mkdir -m 755 dir` | Create a directory with specific permissions           |
-```

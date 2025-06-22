@@ -36,7 +36,6 @@ if (!user) {
 ---
 
 ## 📦 2. Caching Layers & Placement
-```
 | Layer         | Description                              | Example                         |
 |---------------|------------------------------------------|----------------------------------|
 | Client-side   | In browser/app                           | LocalStorage, IndexedDB         |
@@ -45,7 +44,7 @@ if (!user) {
 | App-level     | Cache inside the app                     | In-memory (e.g. `Map`, `Guava`) |
 | Server-side   | Central cache layer                      | Redis, Memcached                |
 | DB/Storage    | Internal query caching                   | PostgreSQL buffer cache         |
-```
+
 ---
 
 ## 🔁 3. Caching Strategies
@@ -93,7 +92,6 @@ Write only to cache and flush to DB asynchronously (dangerous on crashes).
 ---
 
 ## 🧹 5. Eviction Policies
-```
 | Policy        | Description                          | Use Case                         |
 |---------------|--------------------------------------|----------------------------------|
 | LRU (Least Recently Used) | Remove least recently accessed      | Most popular                    |
@@ -101,7 +99,7 @@ Write only to cache and flush to DB asynchronously (dangerous on crashes).
 | FIFO          | Remove oldest added                  | Simple but naive                 |
 | TTL-based     | Remove after N seconds               | Time-bound data like sessions    |
 | Manual        | Application deletes keys explicitly  | Fine-grained control             |
-```
+
 ```
 // Redis: set TTL
 SET user:42 "data" EX 60
@@ -110,18 +108,16 @@ SET user:42 "data" EX 60
 ---
 
 ## ⚠️ 6. Consistency Models
-```
 | Consistency Model  | Description                        | Trade-offs                      |
 |--------------------|------------------------------------|----------------------------------|
 | **Strong**         | Cache and source always in sync    | Hard to scale                   |
 | **Eventual**       | Cache updated after source writes  | Simpler, may serve stale reads  |
 | **Write-through**  | Write to cache + DB together       | Safer, slightly slower          |
 | **Write-back**     | Write to cache only, sync later    | Fast, but risk of data loss     |
-```
+
 ---
 
 ## 📚 7. Common Use Cases
-```
 | Use Case               | Caching Strategy                | Tools                    |
 |------------------------|----------------------------------|--------------------------|
 | API responses          | TTL or CDN-based caching        | Fastly, Varnish          |
@@ -129,11 +125,10 @@ SET user:42 "data" EX 60
 | Search suggestions     | In-memory with LRU              | Guava, Caffeine (Java)   |
 | Product catalog        | Versioned cache + TTL           | Redis + async updates    |
 | ML features or scores  | Write-through, time-bounded     | Redis, feature stores    |
-```
+
 ---
 
 ## 🛠️ 8. Tools and Technologies
-```
 | Tool        | Type           | Notes                              |
 |-------------|----------------|------------------------------------|
 | **Redis**   | In-memory, LRU, TTL, pub/sub | Versatile, widely used           |
@@ -141,11 +136,10 @@ SET user:42 "data" EX 60
 | **Caffeine** (Java) | Local, LRU, async loading | High-performance in-JVM caching  |
 | **Varnish** | HTTP reverse proxy         | Edge and CDN caching             |
 | **Cloudflare / Fastly** | CDN           | Global static and dynamic caching|
-```
+
 ---
 
 ## 🔥 9. Pitfalls to Avoid
-```
 | Pitfall                         | Recommendation                              |
 |----------------------------------|---------------------------------------------|
 | Serving stale data               | Use TTLs, versioned keys, or event triggers |
@@ -153,7 +147,7 @@ SET user:42 "data" EX 60
 | Cache stampede (thundering herd)| Use locking or request coalescing           |
 | Large unbounded keys             | Use size limits and LRU eviction            |
 | Over-caching                     | Don’t cache low-traffic or fast queries     |
-```
+
 ```
 // Prevent cache stampede
 if (!cache.get(key)) {
@@ -186,7 +180,6 @@ if (!cache.get(key)) {
 ---
 
 ## ✅ Summary
-```
 | Topic            | Key Point                             |
 |------------------|----------------------------------------|
 | Strategy         | Cache-aside is most common             |
@@ -194,7 +187,7 @@ if (!cache.get(key)) {
 | Invalidation     | TTL + versioning often best combo      |
 | Eviction         | LRU is best default                    |
 | Consistency      | Choose based on criticality & latency  |
-```
+
 ---
 
 ## 📚 Further Reading

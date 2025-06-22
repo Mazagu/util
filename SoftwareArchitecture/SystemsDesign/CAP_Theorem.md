@@ -56,7 +56,6 @@ Availability ------- Partition Tolerance
 ---
 
 ## ⚙️ 4. Real-World Interpretations
-```
 | Scenario                 | C | A | P | Example Systems                     |
 |--------------------------|---|---|---|-------------------------------------|
 | Relational DB (no partitions) | ✅ | ✅ | ❌ | MySQL on one node, SQLite          |
@@ -64,7 +63,7 @@ Availability ------- Partition Tolerance
 | HBase / Spanner (quorum) | ✅ | ❌ | ✅ | CP                                  |
 | Cassandra / DynamoDB     | ❌ | ✅ | ✅ | Tunable AP                          |
 | Zookeeper / Etcd         | ✅ | ❌ | ✅ | CP (election-based)                |
-```
+
 ---
 
 ## 🧪 5. Network Partitions in Practice
@@ -126,7 +125,6 @@ write(data) {
 ---
 
 ## 🔧 8. Tools and How They Handle CAP
-```
 | Tool / DB       | CAP Preference | Notes                                           |
 |------------------|----------------|--------------------------------------------------|
 | **Cassandra**    | AP (Tunable)   | Can configure consistency level per request     |
@@ -135,17 +133,16 @@ write(data) {
 | **Etcd / Zookeeper** | CP        | Used for coordination, must avoid split-brain   |
 | **MongoDB**      | AP             | Defaults to eventual, can be made strongly consistent |
 | **Redis Sentinel** | AP          | Asynchronous replication, brief inconsistency on failover |
-```
+
 ---
 
 ## ❌ 9. Common Misconceptions
-```
 | Myth                                | Reality                                      |
 |-------------------------------------|----------------------------------------------|
 | "You can’t ever get all 3"          | You can get all 3 in **absence of partitions** |
 | "Availability = uptime"             | CAP availability = always returns a response |
 | "CAP explains everything"           | Other models (e.g. PACELC, BASE) offer better nuance |
-```
+
 ---
 
 ## 🧠 10. Related Concepts
@@ -157,14 +154,13 @@ write(data) {
 ---
 
 ## ✅ Summary
-```
 | Property      | Description                                 |
 |---------------|---------------------------------------------|
 | Consistency   | All nodes return same, latest data          |
 | Availability  | Always respond, even if stale               |
 | Partition Tol.| Works during network failures               |
 | Trade-off     | Pick **2 out of 3** when network partitions |
-```
+
 ---
 
 ## 📚 Further Reading

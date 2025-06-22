@@ -9,7 +9,6 @@ This guide covers foundational concepts that ensure data integrity, consistency,
 A **transaction** is a unit of work that must be **atomic**, **consistent**, **isolated**, and **durable**.
 
 ### 🧪 ACID Properties
-```
 
 | Property       | Description                                          |
 |----------------|------------------------------------------------------|
@@ -17,7 +16,7 @@ A **transaction** is a unit of work that must be **atomic**, **consistent**, **i
 | **Consistency**| Must leave DB in valid state (constraints respected) |
 | **Isolation**  | Transactions don't interfere with each other         |
 | **Durability** | Once committed, it remains — even after crash        |
-```
+
 ### Example: Atomic transfer between accounts
 
 ```
@@ -34,23 +33,23 @@ COMMIT;
 ## 🔀 2. Concurrency & Isolation Levels
 
 Concurrency allows multiple transactions to run in parallel. To prevent race conditions and anomalies, databases use **isolation levels**:
-```
+
 | Isolation Level        | Prevents...                       | Notes                  |
 |------------------------|-----------------------------------|------------------------|
 | Read Uncommitted       | ❌ Nothing                        | Fast, unsafe          |
 | Read Committed         | ✅ Dirty Reads                    | Default in many DBs   |
 | Repeatable Read        | ✅ Non-repeatable Reads           | Good for reads        |
 | Serializable           | ✅ Phantom Reads, full isolation  | Strict, slowest       |
-```
+
 ### Common concurrency issues:
-```
+
 | Issue                  | Description                                        |
 |------------------------|----------------------------------------------------|
 | Dirty read             | Read uncommitted data                              |
 | Non-repeatable read    | Same query returns different results mid-tx        |
 | Phantom read           | New rows appear that match query mid-tx            |
 | Lost update            | Overwrite data written by another tx               |
-```
+
 ---
 
 ## 🔒 3. Locking Strategies
@@ -98,11 +97,11 @@ These are two competing strategies for modeling data in relational databases.
 - Reduces **redundancy**, improves **integrity**
 
 #### Example:
-```
+
 | Table: Orders        | Table: Customers         |
 |----------------------|--------------------------|
 | id, customer_id, ... | id, name, email, ...     |
-```
+
 ### Pros
 ✅ Smaller storage  
 ✅ Fewer anomalies  
@@ -121,11 +120,11 @@ These are two competing strategies for modeling data in relational databases.
 - Prioritizes **read performance** and **query simplicity**
 
 #### Example:
-```
+
 | Table: Orders                          |
 |----------------------------------------|
 | id, customer_name, customer_email, ... |
-```
+
 ### Pros
 ✅ Fewer joins  
 ✅ Faster reads  
@@ -139,7 +138,7 @@ These are two competing strategies for modeling data in relational databases.
 ---
 
 ## 🆚 Comparison Table
-```
+
 | Feature               | Normalized               | Denormalized               |
 |-----------------------|--------------------------|----------------------------|
 | Write Performance     | Better                   | Worse (updates touch more) |
@@ -147,17 +146,17 @@ These are two competing strategies for modeling data in relational databases.
 | Storage Usage         | Efficient                | Redundant                  |
 | Data Consistency      | Strong                   | Weaker                     |
 | Analytics Use         | Harder                   | Easier                     |
-```
+
 ---
 
 ## 🧠 Bonus: When to Choose What?
-```
+
 | Use Case                       | Recommendation                         |
 |--------------------------------|-----------------------------------------|
 | OLTP (banking, inventory)      | ✅ Normalize                           |
 | OLAP (dashboards, BI)          | ✅ Denormalize                         |
 | Mixed workloads                | 🤝 Hybrid (views, materialized tables) |
-```
+
 ---
 
 ## 📚 Further Reading

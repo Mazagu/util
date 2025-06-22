@@ -73,14 +73,14 @@ print(result[0]["generated_text"])
 ---
 
 ## 5. LLM Challenges and Solutions
-```
+
 | Challenge              | Solution/Technique                             |
 |------------------------|-----------------------------------------------|
 | Hallucinations         | Post-processing, retrieval augmentation        |
 | Prompt sensitivity     | Prompt engineering, prompt tuning             |
 | Compute cost           | Quantization, LoRA, distillation              |
 | Privacy & bias issues  | RLHF, filtering datasets, transparency         |
-```
+
 ---
 
 ## 6. Popular Tools and Frameworks

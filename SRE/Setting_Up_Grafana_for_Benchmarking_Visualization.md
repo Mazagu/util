@@ -5,14 +5,13 @@ This guide walks you through setting up **Grafana** to monitor and visualize res
 ---
 
 ## 🧱 Requirements
-```
 | Tool       | Purpose                           |
 |------------|-----------------------------------|
 | **Grafana**| Visualization layer               |
 | **Prometheus** | Metrics time-series database    |
 | **Node Exporter** | Captures CPU, memory, disk stats |
 | **Your Benchmark Tool** | Emits custom metrics (e.g., K6, wrk, custom script) |
-```
+
 ---
 
 ## 1. 🔧 Set Up Prometheus + Node Exporter
@@ -150,7 +149,6 @@ request_latency_seconds_sum    7.39
 ---
 
 ## 6. 📈 What to Track
-```
 | Metric             | Prometheus Query Example                                      |
 |--------------------|---------------------------------------------------------------|
 | P95 latency        | `histogram_quantile(0.95, rate(latency_bucket[1m]))`          |
@@ -158,7 +156,7 @@ request_latency_seconds_sum    7.39
 | CPU %              | `100 - avg(rate(node_cpu_seconds_total{mode="idle"}[1m])) * 100` |
 | Memory used        | `node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes` |
 | Disk I/O (reads)   | `rate(node_disk_reads_completed_total[1m])`                   |
-```
+
 ---
 
 ## ✅ Tips for Reliable Dashboards

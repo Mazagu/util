@@ -45,7 +45,7 @@ CREATE TABLE orders (
 NoSQL databases are **non-relational** and often **schema-less**. They prioritize **scalability**, **flexibility**, and **performance** in distributed systems.
 
 ### Categories of NoSQL:
-```
+
 
 | Type              | Description                          | Example DBs                  |
 |-------------------|--------------------------------------|------------------------------|
@@ -53,7 +53,7 @@ NoSQL databases are **non-relational** and often **schema-less**. They prioritiz
 | **Key-Value**     | Simple key-value store               | Redis, DynamoDB              |
 | **Columnar**      | Wide tables, column families         | Cassandra, HBase             |
 | **Graph**         | Nodes and relationships              | Neo4j, ArangoDB              |
-```
+
 ### Common Features
 
 - Schema flexibility
@@ -139,7 +139,7 @@ In practice, many systems use both:
 - NoSQL for **scalable reads or event logs** (activity feeds, analytics)
 
 ### Examples
-```
+
 
 | Component        | Recommended DB Type     |
 |------------------|-------------------------|
@@ -148,22 +148,22 @@ In practice, many systems use both:
 | Caching layer    | Redis                   |
 | Payments         | MySQL / Oracle          |
 | Event stream     | Cassandra / DynamoDB    |
-```
+
 ---
 
 ## 7. 🔍 Real-World Case Studies
-```
+
 
 | Company        | SQL Use                       | NoSQL Use                          |
 |----------------|-------------------------------|------------------------------------|
 | Netflix        | MySQL for metadata            | Cassandra for viewing history      |
 | Uber           | PostgreSQL for transactions   | Riak/MongoDB for geolocation cache |
 | Facebook       | MySQL for core social graph   | RocksDB / TAO / Scuba for speed    |
-```
+
 ---
 
 ## 8. 🧠 Decision Checklist
-```
+
 | Question                                         | If Yes → Use...      |
 |--------------------------------------------------|----------------------|
 | Do you need joins, constraints, and transactions?| SQL                  |
@@ -171,7 +171,7 @@ In practice, many systems use both:
 | Will you have massive read/write scale?          | NoSQL                |
 | Is schema flexibility important?                 | NoSQL                |
 | Are consistency and integrity top priority?      | SQL                  |
-```
+
 ---
 
 ## 📚 Further Reading

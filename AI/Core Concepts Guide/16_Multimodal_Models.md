@@ -17,7 +17,7 @@ A model that accepts or produces **more than one type of input/output** modality
 ---
 
 ## 2. Examples of Multimodal Use Cases
-```
+
 | Task                        | Modalities             | Example                          |
 |-----------------------------|------------------------|----------------------------------|
 | Visual Question Answering   | Image + Text → Text    | “What’s in this picture?”        |
@@ -26,7 +26,7 @@ A model that accepts or produces **more than one type of input/output** modality
 | Text-to-Image Generation    | Text → Image           | “Generate a cat riding a bike”   |
 | Video Summarization         | Video → Text           | Summarize a YouTube video        |
 | Audio-Visual Emotion Recognition | Audio + Video → Label | Detect mood in a video call     |
-```
+
 ---
 
 ## 3. Architecture: Combining Modalities
@@ -48,7 +48,7 @@ output = Decoder(combined)
 ---
 
 ## 4. Famous Multimodal Models
-```
+
 | Model       | Capabilities                    |
 |-------------|---------------------------------|
 | **CLIP**    | Connects images and text        |
@@ -58,7 +58,7 @@ output = Decoder(combined)
 | **Gemini**  | Multimodal across web and tools |
 | **BLIP-2**  | Image captioning + QA           |
 | **SpeechT5**| Unified audio-text model        |
-```
+
 ---
 
 ## 5. Example: CLIP (Contrastive Language–Image Pretraining)

@@ -137,7 +137,6 @@ ln -f original.txt newlink.txt
 ```
 ---
 ### File Management Cheatsheet
-```
 | Command                  | Description                                            | Example                                       |
 |--------------------------|--------------------------------------------------------|-----------------------------------------------|
 | `cp source target`       | Copy a file to a new location                          | `cp file.txt backup/`                         |
@@ -156,4 +155,3 @@ ln -f original.txt newlink.txt
 | `ln target link_name`    | Create a hard link                                     | `ln original.txt hardlink.txt`                |
 | `ln -s target link_name` | Create a symbolic (soft) link                         | `ln -s /path/to/original.txt symlink.txt`     |
 | `ln -f target link_name` | Force overwrite an existing link                      | `ln -f original.txt hardlink.txt`             |
-```
