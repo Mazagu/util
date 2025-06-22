@@ -153,3 +153,106 @@ Sometimes you can **get the best of both**:
 - [CQRS and Event Sourcing Patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs)
 
 ---
+
+## ❓ FAQ: Event Sourcing vs CRUD
+
+---
+
+### 🟡 When the current state is derived from the latest event (e.g., user is verified), do we still need to compute the full event history?
+
+**Not necessarily.** Many systems only need the **current state**, which can be stored as a **projection** or **materialized view**.
+
+#### 🔹 Typical approach:
+- Store events **immutably** in an **event store**
+- Maintain **read models** (aka projections) that are **updated incrementally** as new events arrive
+- This allows you to **read the current state without replaying** all events every time
+
+```
+// Example: User status projection
+user_id: 123
+status: "verified"
+updated_at: "2025-06-10"
+```
+
+This works well for **low-complexity state** (e.g., "verified", "active", "locked").
+
+---
+
+### 🟡 But what about use cases like computing account balances from all financial transactions?
+
+In these cases, **replaying all events** (e.g., `deposit`, `withdrawal`) **may be required** to compute the current state (e.g., balance).
+
+#### 🔹 Strategies to optimize:
+1. **Snapshots**: Save periodic state snapshots (e.g., every 1,000 events)
+   - Replay only events **after** the last snapshot
+   - Tradeoff: storage overhead, snapshot versioning
+
+```
+// Snapshot example:
+snapshot: {
+  user_id: 123,
+  balance: 3500,
+  event_offset: 10593
+}
+```
+
+2. **Materialized Views**: Maintain balance in real-time using a read model
+   - Event handler updates balance as events arrive
+   - Fast reads, consistent as of last event processed
+
+3. **Delta Events**: Emit derived events like `daily_balance_computed` or `interest_applied`
+   - Reduces need to compute complex history on-the-fly
+
+---
+
+### 🟢 Which approach should I use?
+
+| Case                          | Recommended Strategy                    |
+|-------------------------------|-----------------------------------------|
+| Simple status (e.g. verified) | Projection or read model                |
+| Financial balance             | Snapshots + projection                  |
+| Compliance/auditing required  | Full event history + periodic snapshot  |
+| Complex aggregations          | Event replay + cached materializations  |
+
+---
+
+### ⚙️ How do you scale event sourcing systems?
+
+#### 1. **Sharding the Event Store**
+- Partition events by aggregate ID (e.g. per user, per account)
+- Use Kafka, DynamoDB streams, or purpose-built stores (EventStoreDB, Axon)
+
+#### 2. **Asynchronous Projections**
+- Keep projections separate from the write model
+- Use background consumers to update materialized views
+- Enables horizontal scaling of read performance
+
+#### 3. **Append-Only Optimization**
+- Use log-structured storage (e.g. Kafka, Apache Pulsar)
+- Writes are fast and storage is immutable
+
+#### 4. **Snapshotting & Compaction**
+- Store snapshots for fast recovery
+- Apply compaction policies to trim historical events if legally allowed
+
+---
+
+### 📦 How does event sourcing compare to CRUD in terms of storage?
+
+| Aspect        | CRUD                          | Event Sourcing                          |
+|---------------|-------------------------------|------------------------------------------|
+| Storage Use   | Stores only current state     | Stores full event history + projections |
+| Mutation Type | Overwrites previous state     | Appends immutable events                |
+| Auditing      | Needs extra logging layer     | Built-in audit trail                    |
+| Storage Growth| Controlled                    | Grows over time, needs pruning/snapshot |
+
+---
+
+### 🧠 Final Tips
+
+- Keep **event granularity meaningful** — not too coarse or too fine
+- Maintain **projection rebuild tooling** (in case schema evolves)
+- Use **event versioning** practices (additive changes, upcasters)
+- Monitor **event lag** between the event store and projections
+
+---
