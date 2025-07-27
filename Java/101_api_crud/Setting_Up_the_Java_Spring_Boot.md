@@ -1,4 +1,4 @@
-# Setting Up the Java API with Docker and Maven (Spring Boot)
+# Setting Up the Java Spring Boot API with Docker and Maven
 
 In this guide, we will set up a simple Spring Boot Java API with Maven, Docker, and MySQL as a backend. The guide will help you configure the project, build it with Maven, and run it in a Docker container.
 
